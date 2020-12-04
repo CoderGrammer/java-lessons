@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.20'
+    id 'org.checkerframework' version '0.5.13'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    checker
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:30.0-jre'
+    implementation 'io.vavr:vavr:0.10.3'
+    implementation 'com.jnape.palatable:lambda:5.2.0'
+    implementation 'org.jetbrains.kotlin:kotlin-script-runtime:1.4.20'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    annotationProcessor 'org.checkerframework:checker:3.8.0'
+    compile configurations.checker.dependencies
+}
+// To execute pass in -PrunCheckFramework
+// For the Checker Framework
+// See: https://stackoverflow.com/questions/31950055/passing-the-path-to-a-gradle-dependency-to-the-java-compiler
+allprojects {
+    if (project.hasProperty("runCheckFramework")) {
+        tasks.withType(JavaCompile).all { JavaCompile compile ->
+            compile.options.debug = true
+            compile.options.compilerArgs = [
+                    "-Xbootclasspath/p:${configurations.checker.asPath}",
+                    '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
+                    '-implicit:class',
+                    '-AprintErrorStack'
+            ]
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
