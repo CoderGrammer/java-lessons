@@ -28,6 +28,7 @@ public class _11_AllTheOrs {
     }
 
     // orElseThrow
+    // These methods can be used for 'defensive coding'
     void orElseThrow() {
         Optional<Integer> o = Optional.of(1);
         Integer integer = o.orElseThrow(); // Throws a NoSuchElementException if empty!
@@ -41,6 +42,21 @@ public class _11_AllTheOrs {
         Integer integer2 = o.orElseThrow(IllegalStateException::new);
         // Use this when an absence of a value i.e. an empty Optional indicates an error
         // ...but you want a specific exception, even more so if it is expensive to construct
+    }
+
+    void goingOverMultipleOptionals() {
+        var first = Optional.empty();
+        var second = Optional.empty();
+        var third = Optional.empty();
+
+        // Map is no good in this case because it is about transforming a value that is present
+        // first.map()
+
+        // Or is the method to use
+        first.or(() -> second)
+                .or(() -> third)
+                    .orElse("something");
+        // or returns an optional whereas orElse orElseGet return values
     }
 
 }
