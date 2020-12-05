@@ -26,7 +26,7 @@ map vs flatMap
          - This will map and then flatten the result
          - So it is only wrapped in one Optional
 */
-public class _13_FlatMap {
+public class _15_FlatMap {
 
     public static void main(String[] args) {
         // Scenario

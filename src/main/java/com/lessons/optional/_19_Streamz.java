@@ -24,7 +24,7 @@ stream
          - <stream>.flatMap(Optional::stream)
      - This returns a stream of 0 or 1 elements
 */
-public class _17_Z_Streamz {
+public class _19_Streamz {
 
     public static void main(String[] args) {
         // Scenario

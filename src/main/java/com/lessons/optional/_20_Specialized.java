@@ -17,7 +17,7 @@ Where required we can use the specialised classes:
      - They are missing filter, map and flatMap, ofNullable methods
      - The purpose of these is to mitigate the effect of boxing/unboxing
 */
-public class _19_Specialized {
+public class _20_Specialized {
 
     public static void main(String[] args) {
         OptionalDouble average = IntStream.of(1, 2).average();

@@ -5,7 +5,7 @@ import java.util.Optional;
 /*
  - A little more functional...
 */
-public class _8_IfPresent {
+public class _10_IfPresent {
     public static void main(String[] args) {
         Optional<String> o = Optional.of("abc");
         o.ifPresent(op -> System.out.println(op));

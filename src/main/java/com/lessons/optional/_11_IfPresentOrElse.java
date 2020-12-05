@@ -5,7 +5,7 @@ import java.util.Optional;
 /*
  - A little more functional... but catering to both scenarios, Empty and Present
 */
-public class _9_IfPresentOrElse {
+public class _11_IfPresentOrElse {
 
     public static void main(String[] args) {
         Optional<String> o = Optional.of("abc");

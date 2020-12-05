@@ -9,7 +9,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 // Problems with checker frameworks:
 //   - They require code so might as well use Optional if it does what you need
 //   - Does not protect API methods unless the client is using the Checker Framework
-public class _21_B_CheckerFramework {
+public class _22_CheckerFramework {
 
     void a(@Nullable String i) {
     }

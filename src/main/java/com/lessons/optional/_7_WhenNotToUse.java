@@ -15,7 +15,7 @@ import com.lessons.optional._100_Utils.SearchResultSet;
 import java.util.List;
 import java.util.Optional;
 
-public class _6_WhenNotToUse {
+public class _7_WhenNotToUse {
 
     public static void main(String[] args) {
         // No need for an Optional here
@@ -49,6 +49,10 @@ public class _6_WhenNotToUse {
 
         // Personally I don't like it!
         // "I think routinely using it as a return value for getters would definitely be over-use." Brian Goetz
+        // Where present more objects polluting the heap
+        // More verbose also on every getter!
+        // May also cause issues with bean handlers
+        // Could be useful to callers but more than likely annoying!
         public Optional<Tail> getTail() {
             return tail;
         }

@@ -2,7 +2,7 @@ package com.lessons.optional;
 
 import java.util.Optional;
 
-public class _10_IsPresentIsEmpty {
+public class _12_IsPresentIsEmpty {
 
     public static void main(String[] args) {
         Optional<Integer> o = Optional.of(1);

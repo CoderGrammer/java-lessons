@@ -14,10 +14,10 @@ import java.util.Optional;
      - If your object was more of the bean variety when what would you return from you Null object? Optionals? More
        nulls? This is why I would suggest not using for bean type classes
 */
-public class _21_A_NullObjectPattern {
+public class _23_NullObjectPattern {
 
     public static void main(String[] args) {
-        new _21_A_NullObjectPattern().demo();
+        new _23_NullObjectPattern().demo();
     }
 
     interface Vehicle {

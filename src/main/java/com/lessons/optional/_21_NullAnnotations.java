@@ -14,7 +14,8 @@ import org.jetbrains.annotations.Nullable;
      - org.jetbrains.annotations
      - org.checkerframework.checker.nullness.qual
      - lombok.NonNull
- - Some are compile time, some retained at runtime
+     - org.springframework.lang.Nullable
+ - Some are compile time, some retained at runtime but provide no runtime safety
  - They have different levels of support in different ides and setups
  - There is little consistency
  - Not sure I would not bother with them personally!
@@ -24,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
      - Protect params with Objects.requireNonNull()
      - Consider the Null Object Pattern in limited cases
 */
-public class _21_C_NullAnnotations {
+public class _21_NullAnnotations {
 
     // Parameter null detection
 
