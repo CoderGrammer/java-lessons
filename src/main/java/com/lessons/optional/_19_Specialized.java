@@ -2,7 +2,6 @@ package com.lessons.optional;
 
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 /*
 Where required we can use the specialised classes:

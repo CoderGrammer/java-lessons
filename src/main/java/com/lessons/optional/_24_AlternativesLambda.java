@@ -2,7 +2,6 @@ package com.lessons.optional;
 
 import com.jnape.palatable.lambda.adt.Maybe;
 import com.jnape.palatable.lambda.functions.Fn1;
-import com.jnape.palatable.lambda.functions.Fn2;
 
 import java.util.Optional;
 import java.util.function.Function;
