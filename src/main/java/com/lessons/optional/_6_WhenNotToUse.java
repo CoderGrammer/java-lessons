@@ -40,13 +40,15 @@ public class _6_WhenNotToUse {
 
         // One approach
         // But Optional is not Serializable
-        // This violatees the bean laws. Sometimes you have a requirement that your beens are 'proper' beans such as in
+        // This violates the bean laws. Sometimes you have a requirement that your beans are 'proper' beans such as in
         // some web contexts so they can be deflated and inflated
         Optional<Tail> tail;
 
         // Another approach
         Beak beak;
 
+        // Personally I don't like it!
+        // "I think routinely using it as a return value for getters would definitely be over-use." Brian Goetz
         public Optional<Tail> getTail() {
             return tail;
         }
@@ -55,6 +57,5 @@ public class _6_WhenNotToUse {
             return Optional.ofNullable(beak);
         }
     }
-
 
 }

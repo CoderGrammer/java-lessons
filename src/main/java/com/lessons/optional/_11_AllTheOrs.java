@@ -16,6 +16,9 @@ public class _11_AllTheOrs {
         Optional<Integer> o = Optional.of(1);
         Integer i = o.orElse(2);
         // Use this when you want to return a value that is not wrapped in an Optional but have an alternate value too
+
+        // What if you actually want a null?
+        o.orElse(null);
     }
 
     // orElseGet
