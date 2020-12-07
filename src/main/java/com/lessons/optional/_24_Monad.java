@@ -4,7 +4,7 @@ import java.util.Optional;
 import java.util.function.Function;
 
 /*
-Is it a monad?
+ - Is it a monad?
      - A Functor with a flatMap method...
      - What is a Functor (a wrapper with a map method)
      - A wrapper type, having a unit (ofNullable) method, and a bind (flatMap) method

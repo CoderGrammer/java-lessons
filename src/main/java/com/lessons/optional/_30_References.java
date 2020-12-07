@@ -3,6 +3,10 @@ package com.lessons.optional;
 /*
  References:
  -----------
+
+ Null Mistake:
+ https://www.youtube.com/watch?v=YYkOWzrO3xg
+
  General:
  https://blog.joda.org/2015/08/java-se-8-optional-pragmatic-approach.html
 

@@ -5,22 +5,107 @@ import com.lessons.optional._100_Utils.Employee;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /*
  - Null was invented by Tony Hoare in 1964 (not in Java!)
- - Null is not the same as undefined
  - He called null his 'Billion dollar mistake'
+ - 30 odd years later adopted into Java
+ - For all reference types the default value is null
+ - null == null in Java
+ - null is not an instanceof anything
 */
 public class _1_NullBasics {
 
-    // null is not an object
-    // null is a 'reserved word' aka 'keyword'
-    // reserved words are always lowercase
-    // There are around 50 of them
-    // Cannot be used as an identifier
+    /*
+     - null is not an object
+     - null is a 'reserved word' aka 'keyword'
+     - reserved words are always lowercase
+     - There are around 50 of them
+     - Cannot be used as an identifier
+     - null is a literal value
+     - it is case sensitive so null is not the same as Null
+
+     - one way to handle null is to try/catch the NPE
+     - Null improvements in Java 14
+    */
     void reserved() {
         // String null = ""; // Illegal! Compile error!
+    }
+
+//    - Null is useful for lazy init pattern - only init when requested
+
+
+    void lazy() {
+        Integer i;
+        // do some stuff
+    }
+
+    public static void main(String[] args) {
+        new _1_NullBasics().casting();
+    }
+
+    /*
+     - Casting makes no difference
+     - Remember Strings are immutable
+    */
+    void casting() {
+        String sx = (String) null;
+        System.out.println(sx + "A");
+        System.out.println(sx.toUpperCase()); // Actually still null
+    }
+
+    static class Statik {
+        static void str() {
+            System.out.println("hello");
+        }
+    }
+
+    /*
+     - Shocking! You can call a method on a null reference!
+     - Well not quite. Java knows that it is a static method
+     - Statics live on the Stack not the Heap
+    */
+    void statik() {
+        Statik a = null;
+        a.str();
+    }
+
+    /*
+     - You cannot sync on a null
+     - Runtime problems are worse than compile time
+    */
+    void sync() {
+        String kk = null;
+        synchronized (kk) { // NPE!
+            System.out.println("no way");
+        }
+
+        // Cannot use uninitialized - compile error!
+        // String jj;
+        // synchronized (jj) { // Not initialised compile error
+        //     System.out.println("no way");
+        // }
+
+        // Cannot use null - compile error!
+        // synchronized (null) { // Required Object got null
+        //     System.out.println("no way");
+        // }
+    }
+
+    // When you unbox a null you get NPE:
+    void boxing() {
+         Integer inn = null;
+         int j1 = inn; // NPE!
+    }
+
+    String t;
+    Integer g;
+    // null is the default value for all reference types
+    void defaultValue() {
+        System.out.println(t); // prints null
+        System.out.println(g); // prints null
     }
 
     enum A { x, y}
@@ -48,10 +133,6 @@ public class _1_NullBasics {
         int k = a[1]; // NPE
     }
 
-    public static void main(String[] args) {
-        new _1_NullBasics().collectionsInconsistentOnNulls();
-    }
-
     static String x; // Inits to null
     String y; // Inits to null
 
@@ -75,11 +156,15 @@ public class _1_NullBasics {
         System.out.println(i); // null
         System.out.println(j); // null
 
-        // Member variables:
-        // int l = null; // Illegal! Compile error!
+        /*
+         - Member variables:
+         - int l = null; // Illegal! Compile error!
+        */
         int o;
-        // System.out.println(l); // null
-        // System.out.println(o); // Illegal! Compile error!
+        /*
+         - System.out.println(l); // null
+         - System.out.println(o); // Illegal! Compile error!
+        */
     }
 
     void collectionsInconsistentOnNulls() {

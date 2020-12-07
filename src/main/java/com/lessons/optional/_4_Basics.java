@@ -19,14 +19,15 @@ public class _4_Basics {
         Optional<String> o = Optional.empty();
     }
 
-
     interface ForceType {}
     interface Powered extends ForceType {}
     interface Manual extends ForceType {}
 
-    // It is a parameterized type
-    // There is no parametric polymorphism
-    // As it is final
+    /*
+     - It is a parameterized type
+     - There is no parametric polymorphism
+     - As it is final
+    */
     void parameterized() {
 
         class Vehicle<T extends ForceType> {
@@ -38,10 +39,10 @@ public class _4_Basics {
         class Bike extends Vehicle<Powered> {
         }
 
-        // Compile error! Optional is final
-        // class MaybeAddress extends Optional<MaybeAddress> {
-        // }
-
+        /*
+         - Compile error! Optional is final
+         - class MaybeAddress extends Optional<MaybeAddress> { }
+        */
     }
 
     // A method that returns Optional should never return null
@@ -94,11 +95,13 @@ public class _4_Basics {
         Optional.ofNullable(null); // Equivalent to Optional.empty(), the Null is not stored
     }
 
-    // Keep in mind that there is almost nothing to do with the empty other than knowing its empty
-    // The downstream methods all do either:
-    //  - use a value
-    //  - do something if no value is present
-    //  - are checks such as isEmpty
+    /*
+     - Keep in mind that there is almost nothing to do with the empty other than knowing its empty
+     - The downstream methods all do either:
+         - use a value
+         - do something if no value is present
+         - are checks such as isEmpty
+    */
     void downStreamMethods() {
         Optional.of("")
                 .map(String::toLowerCase) // use the value

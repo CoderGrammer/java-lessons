@@ -1,7 +1,7 @@
 package com.lessons.optional;
 
 /*
-When not to use Optional?
+ - When not to use Optional?
     - Returning container types including collections etc
     - as field types in a class because it is not serializable
     - as params to a method (unless you know the callers have an optional)
@@ -38,21 +38,25 @@ public class _7_WhenNotToUse {
         class Tail { }
         class Beak { }
 
-        // One approach
-        // But Optional is not Serializable
-        // This violates the bean laws. Sometimes you have a requirement that your beans are 'proper' beans such as in
-        // some web contexts so they can be deflated and inflated
+        /*
+         - One approach
+         - But Optional is not Serializable
+         - This violates the bean laws. Sometimes you have a requirement that your beans are 'proper' beans such as in
+         - some web contexts so they can be deflated and inflated
+        */
         Optional<Tail> tail;
 
         // Another approach
         Beak beak;
 
-        // Personally I don't like it!
-        // "I think routinely using it as a return value for getters would definitely be over-use." Brian Goetz
-        // Where present more objects polluting the heap
-        // More verbose also on every getter!
-        // May also cause issues with bean handlers
-        // Could be useful to callers but more than likely annoying!
+        /*
+         - Personally I don't like it!
+         - "I think routinely using it as a return value for getters would definitely be over-use." Brian Goetz
+         - Where present more objects polluting the heap
+         - More verbose also on every getter!
+         - May also cause issues with bean handlers
+         - Could be useful to callers but more than likely annoying!
+        */
         public Optional<Tail> getTail() {
             return tail;
         }

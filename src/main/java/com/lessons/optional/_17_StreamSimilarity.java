@@ -3,7 +3,7 @@ package com.lessons.optional;
 import java.util.stream.Stream;
 
 /*
-Similarity to Streams
+ - Similarity to Streams
      - Many of the meths on Optional are similar to methods found in java streams
      - They are often used together which can be confusing
      - The operations on streams are very useful and serve many use cases, therefore it is understandable why you

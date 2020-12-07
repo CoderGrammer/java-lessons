@@ -20,16 +20,20 @@ public class _3_PreventingNullBeforeOptional {
         System.out.println(i.toString()); // NPE!
         System.out.println(String.valueOf(i)); // No NPE
 
-        // Use a method to evaluate a supplier
-        // Good for method chains
+        /*
+         - Use a method to evaluate a supplier
+         - Good for method chains
+        */
         SearchResultSet sr = null;
         System.out.println(nullableChain(
                 () -> sr.getBestMatch().getEngine().getSize().toUpperCase()));
 
-        // Use Java assertions
-        // They can be quite concise compared to if/throw checks
-        // However they are often turned off in production systems
-        // Use the -ea flag to enable
+        /*
+         - Use Java assertions
+         - They can be quite concise compared to if/throw checks
+         - However they are often turned off in production systems
+         - Use the -ea flag to enable
+        */
         String s2 = null;
         assert sr != null;
 
@@ -49,17 +53,27 @@ public class _3_PreventingNullBeforeOptional {
         // Use the JDK methods to check or default
         Objects.requireNonNullElse(s4, "alternate");
 
-        // Check if its null in a streaming context
-        // Why do we need this?
-        // Well in a stream it can be used as a Predicate: Objects::isNull
+        /*
+         - Check if its null in a streaming context
+         - Why do we need this?
+         - Well in a stream it can be used as a Predicate: Objects::isNull
+        */
         Objects.isNull(null);
 
         // Opposite of the previous method
         Objects.nonNull(null);
+
+        // Defensively throw an exception manually
+        String arg = null;
+        if (arg == null) {
+            throw new IllegalArgumentException("Argument arg to the method must not be null");
+        }
     }
 
-    // Use a unit test
-    // See NotNullTest.java
+    /*
+     - Use a unit test
+     - See NotNullTest.java
+    */
     public String getSomeValue() {
         // return null;
         return "abc";

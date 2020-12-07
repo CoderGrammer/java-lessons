@@ -26,11 +26,11 @@ public class _25_AlternativesGuava {
         // Convert from Javas Optional
         Optional<String> o2 = Optional.fromJavaUtil(java.util.Optional.of("abc"));
 
-        // absent -> empty
-        // fromNullable -> ofNullable
-        // or -> orElse
-        // asSet -> ?
-        //
-
+        /*
+         - absent -> empty
+         - fromNullable -> ofNullable
+         - or -> orElse
+         - asSet -> ?
+        */
     }
 }

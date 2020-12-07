@@ -25,13 +25,17 @@ public class _13_AllTheOrs {
     void orElseGet() {
         Optional<Integer> o = Optional.of(1);
         Integer integer = o.orElseGet(() -> 2);
-        // Use this instead of orElse when:
-        // you want to return a value that is not wrapped in an Optional but have an alternate value too
-        // ...but it is expensive to compute
+        /*
+         - Use this instead of orElse when:
+         - you want to return a value that is not wrapped in an Optional but have an alternate value too
+         - ...but it is expensive to compute
+        */
     }
 
-    // orElseThrow
-    // These methods can be used for 'defensive coding'
+    /*
+     - orElseThrow
+     - These methods can be used for 'defensive coding'
+    */
     void orElseThrow() {
         Optional<Integer> o = Optional.of(1);
         Integer integer = o.orElseThrow(); // Throws a NoSuchElementException if empty!
@@ -43,8 +47,10 @@ public class _13_AllTheOrs {
         Optional<Integer> o = Optional.of(1);
         Integer integer = o.orElseThrow(() -> new IllegalStateException("Whoops!"));
         Integer integer2 = o.orElseThrow(IllegalStateException::new);
-        // Use this when an absence of a value i.e. an empty Optional indicates an error
-        // ...but you want a specific exception, even more so if it is expensive to construct
+        /*
+         - Use this when an absence of a value i.e. an empty Optional indicates an error
+         - ...but you want a specific exception, even more so if it is expensive to construct
+        */
     }
 
     void goingOverMultipleOptionals() {
@@ -52,8 +58,10 @@ public class _13_AllTheOrs {
         var second = Optional.empty();
         var third = Optional.empty();
 
-        // Map is no good in this case because it is about transforming a value that is present
-        // first.map()
+        /*
+         - Map is no good in this case because it is about transforming a value that is present
+         - first.map()
+        */
 
         // Or is the method to use
         first.or(() -> second)

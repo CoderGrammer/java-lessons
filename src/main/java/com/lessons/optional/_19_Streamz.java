@@ -10,7 +10,7 @@ import static com.lessons.optional._100_Utils.print;
 import static java.util.stream.Collectors.toList;
 
 /*
-stream
+ - stream
      - This method allows you to treat an optional as a stream benefitting from all the stream methods
      - This method is often useful with another stream say from a collection of Cars for example
      - Usually used with that other streams flatMap method

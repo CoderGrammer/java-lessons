@@ -7,12 +7,12 @@ import java.util.Optional;
 import static com.lessons.optional._100_Utils.print;
 
 /*
-flatMap
+ - flatMap
      - Similar to map, but its signature mandates an input which is wrapped in an Optional
      - It flattens the result to prevent the nested wrapping in Optionals
      - So if your mapping function returns an Optional use this method
      - Remember flatMap() always returns an Optional
-map vs flatMap
+ - map vs flatMap
      - Generally
          - flatMap is useful when the map operation results in an item double nested in the containing type e.g.
            Stream of Streams or Optional of Optional

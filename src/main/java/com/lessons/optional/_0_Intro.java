@@ -2,7 +2,7 @@ package com.lessons.optional;
 
 /*
  - Why such a lengthy course on Optional?
- - Well NPEs are a very common sight to most Java developers
+ - Well nulls in Java can lead to NPEs - a very common sight to most Java developers
  - It can be particularly annoying tracing the real source of the problem
  - There is often much confusion about the best way to handle them from endless null checks to setting default values
    and everything in between

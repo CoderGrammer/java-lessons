@@ -3,7 +3,7 @@ package com.lessons.optional;
 import java.util.Optional;
 
 /*
-get
+ - get
      - Calling get() on an empty Optional results in NoSuchElementException
      - Get is considered problematic because it throws an exception if empty
      - Should not be called without a check first

@@ -1,7 +1,7 @@
 package com.lessons.optional;
 
 /*
-filter
+ - filter
      - Replaces a scenario where you check if something isPresent & matches a condition
      - if empty then returns empty
      - if present then applies predicate
@@ -27,11 +27,13 @@ public class _16_Filter {
         // Better
         Optional<Employee> e1 = employee.filter(f -> f.getYrsOfService() > 1);
 
-        // Filter only unpacks the outer Optional element, not nested elements. If
-        // you map to an Optional element you will need to unpack it. So this won't work:
-        // Optional<Integer> age = employee.map(Employee::getAge).filter(g -> g > 10);
-        // ...because it's trying to operate on an Optional<Optional<Integer>
-        // Instead you can do:
+        /*
+          - Filter only unpacks the outer Optional element, not nested elements. If
+          - you map to an Optional element you will need to unpack it. So this won't work:
+          - Optional<Integer> age = employee.map(Employee::getAge).filter(g -> g > 10);
+          - ...because it's trying to operate on an Optional<Optional<Integer>
+          - Instead you can do:
+        */
         Optional<Integer> age = employee.flatMap(Employee::getAge).filter(g -> g > 10);
         // Multiple filters:
         Optional<Integer> age2 = employee.flatMap(Employee::getAge)

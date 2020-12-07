@@ -2,6 +2,11 @@ package com.lessons.optional;
 
 import java.util.Optional;
 
+/*
+ - A container object which may or may not contain a non-null value
+ - If a value is present, it is called present
+ - If not, it is called empty (or absent)
+*/
 public class _5_What {
 
     public static void main(String[] args) {

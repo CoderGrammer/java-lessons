@@ -3,9 +3,9 @@ package com.lessons.optional;
 import static com.lessons.optional._100_Utils.print;
 
 /*
-What is it?
+ - What is it?
      - “…a limited mechanism for library meth return types...”
-Why do we need it?
+ - Why do we need it?
      - Because NPEs are very annoying and can be costly
 */
 public class _2_Why {

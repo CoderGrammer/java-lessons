@@ -3,7 +3,7 @@ package com.lessons.optional;
 import java.util.Optional;
 
 /*
-map
+ - map
      - If present, applies the mapping
      - Returns an Optional of the result of the mapping
      - Or empty Optional if not present

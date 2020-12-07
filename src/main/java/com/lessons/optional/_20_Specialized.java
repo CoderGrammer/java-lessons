@@ -4,7 +4,7 @@ import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 /*
-Where required we can use the specialised classes:
+ - Where required we can use the specialised classes:
      - OptionalDouble
      - OptionalInt
      - OptionalLong

@@ -15,7 +15,6 @@ public class _26_AlternativesVavr {
 
     public static void main(String[] args) {
         Option<Integer> o = Option.of(1);
-
     }
 
     /*
@@ -31,16 +30,17 @@ public class _26_AlternativesVavr {
                 .map(i -> (String) null)
                 .flatMap(s -> Option.of(s).map(String::intern)); // Note Option.of is None in this case
 
-        // Why is this better?
-        // Well it is more appropriate behaviour of a monad
-        // The key is that the map method should not change the computational context
-        // This is what happens with:
+        /*
+         - Why is this better?
+         - Well it is more appropriate behaviour of a monad
+         - The key is that the map method should not change the computational context
+         - This is what happens with:
+        */
         Optional.of("a")
                 .map(s -> (String) null) // Computational context changes here to Empty
                 .map(String::toUpperCase);
 
         // In actual fact flatMap should be used for context changes as in the VAVR Option case
-
     }
 
 

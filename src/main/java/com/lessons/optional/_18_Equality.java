@@ -3,7 +3,7 @@ package com.lessons.optional;
 import java.util.Optional;
 
 /*
-equals(), hashCode() and toString()
+ - equals(), hashCode() and toString()
      - Where a value is present these methods operate on the value itself
 */
 public class _18_Equality {
