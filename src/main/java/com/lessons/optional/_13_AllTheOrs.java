@@ -4,6 +4,9 @@ import java.util.Optional;
 
 public class _13_AllTheOrs {
 
+    public static void main(String[] args) {
+    }
+
     // or
     void or() {
         Optional<Integer> o = Optional.of(1);

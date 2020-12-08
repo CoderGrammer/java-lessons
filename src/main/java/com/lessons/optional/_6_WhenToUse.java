@@ -12,6 +12,9 @@ import java.util.Optional;
 */
 public class _6_WhenToUse {
 
+    public static void main(String[] args) {
+    }
+
     EmployeeService service = new EmployeeService();
 
     void loadEmployee() {

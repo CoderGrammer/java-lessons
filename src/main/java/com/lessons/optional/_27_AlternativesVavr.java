@@ -11,7 +11,7 @@ import java.util.Optional;
  - Another key diff if that in java a .map that results in null returns Optional.empty(), in vavr it would be Some(null)
  - This can cause NPEs in VAVR
 */
-public class _26_AlternativesVavr {
+public class _27_AlternativesVavr {
 
     public static void main(String[] args) {
         Option<Integer> o = Option.of(1);

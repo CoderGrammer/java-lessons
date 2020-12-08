@@ -5,7 +5,6 @@ import com.lessons.optional._100_Utils.Employee;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 /*
@@ -13,10 +12,44 @@ import java.util.Map;
  - He called null his 'Billion dollar mistake'
  - 30 odd years later adopted into Java
  - For all reference types the default value is null
- - null == null in Java
- - null is not an instanceof anything
 */
 public class _1_NullBasics {
+
+    public static void main(String[] args) {
+    }
+
+    /*
+     - For all reference types the default value is null
+     - Reference types (on the stack) contain a pointer to mem location of the object on the heap
+     - Primitives (on the stack) (instead of containing a pointer) contain the actual value
+     - Primitives get a 'sensible' default but the default for references is null
+     - This is not the same as uninitialized in a local var but you will get a compile error if you try to use it
+    */
+    String kkkk;
+    void defaultForRefTypes() {
+        System.out.println(kkkk); // null
+
+//        // Unintialised
+//        String ooo;
+//        System.out.println(ooo.getBytes());
+
+//        // Null (not uninitialized)
+//        String ooo = null;
+//        System.out.println(ooo.getBytes());
+    }
+
+    /*
+     - null is not an instanceof anything
+    */
+    void instanceOf() {
+        String s = null;
+        System.out.println(s instanceof String);
+    }
+
+    // null == null in Java
+    void equality() {
+        System.out.println(null == null); // true
+    }
 
     /*
      - null is not an object
@@ -40,10 +73,6 @@ public class _1_NullBasics {
     void lazy() {
         Integer i;
         // do some stuff
-    }
-
-    public static void main(String[] args) {
-        new _1_NullBasics().casting();
     }
 
     /*

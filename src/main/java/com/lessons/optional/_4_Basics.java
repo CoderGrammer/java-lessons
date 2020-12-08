@@ -4,6 +4,9 @@ import java.util.Optional;
 
 public class _4_Basics {
 
+    public static void main(String[] args) {
+    }
+
     // No public constructor
     // You must use factory methods
     void noPublicConstructor() {

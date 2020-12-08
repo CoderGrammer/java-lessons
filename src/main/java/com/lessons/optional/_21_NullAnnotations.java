@@ -27,6 +27,9 @@ import org.jetbrains.annotations.Nullable;
 */
 public class _21_NullAnnotations {
 
+    public static void main(String[] args) {
+    }
+
     // Parameter null detection
 
     void main() {

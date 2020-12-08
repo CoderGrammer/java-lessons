@@ -14,7 +14,7 @@ import java.util.function.Function;
  - Can convert back and forth between this and Java Optional
  - Other than that there are lots of other functional sounds methods on the class
 */
-public class _27_AlternativesLambda {
+public class _28_AlternativesLambda {
 
     public static void main(String[] args) {
         Function<Integer, Object> nullResultFn = __ -> null;
