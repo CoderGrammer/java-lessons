@@ -8,7 +8,7 @@ import static com.lessons.optional._100_Utils.print;
  - Why do we need it?
      - Because NPEs are very annoying and can be costly
 */
-public class _2_Why {
+public class _2_WhyOptional {
 
     public static void main(String[] args) {
 
