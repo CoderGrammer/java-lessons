@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 /*
  - Other ways to prevent null, some of which are still relevant
 */
-public class _3_PreventingNullBeforeOptional {
+public class _03_PreventingNullBeforeOptional {
 
     public static void main(String[] args) {
         String s = null;

@@ -2,7 +2,7 @@ package com.lessons.optional;
 
 import java.util.Optional;
 
-public class _4_Basics {
+public class _04_Basics {
 
     public static void main(String[] args) {
     }

@@ -15,7 +15,7 @@ import com.lessons.optional._100_Utils.SearchResultSet;
 import java.util.List;
 import java.util.Optional;
 
-public class _7_WhenNotToUse {
+public class _07_WhenNotToUse {
 
     public static void main(String[] args) {
         // No need for an Optional here

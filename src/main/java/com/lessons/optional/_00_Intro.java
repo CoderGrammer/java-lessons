@@ -9,6 +9,6 @@ package com.lessons.optional;
  - The proposed partial solution to the problem, Optional, is used and abused in almost every PR/MR
  - The problem and solution are so ubiquitous that sub-optimal use really adds up over time
 */
-public class _0_Intro {
+public class _00_Intro {
 
 }
