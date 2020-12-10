@@ -8,6 +8,7 @@ package com.lessons.optional;
    and everything in between
  - The proposed partial solution to the problem, Optional, is used and abused in almost every PR/MR
  - The problem and solution are so ubiquitous that sub-optimal use really adds up over time
+ - We use Java 11 and later touch on Java 14
 */
 public class _00_Intro {
 

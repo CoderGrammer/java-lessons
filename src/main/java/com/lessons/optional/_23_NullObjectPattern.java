@@ -8,7 +8,7 @@ import java.util.Optional;
    would simply do nothing
  - The Null object can be created as a singleton (but remember Optional.empty() is also effectively a singleton)
  - When to use:
-     - If your client if fetching member values then use Optional or nothing in the case of bean props
+     - If your client is fetching member values then use Optional or nothing in the case of bean props
      - If you client is delegating behaviour to the object it may be useful to use the Null object pattern to save them
        the work
      - If your object was more of the bean variety when what would you return from you Null object? Optionals? More

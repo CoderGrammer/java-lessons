@@ -8,10 +8,12 @@ import java.util.List;
 import java.util.Map;
 
 /*
+ - Null represents the absence of a value
  - Null was invented by Tony Hoare in 1964 (not in Java!)
  - He called null his 'Billion dollar mistake'
  - 30 odd years later adopted into Java
  - For all reference types the default value is null
+ - Usually denoted with a zero address in memory but could be anything and implementation specific
 */
 public class _01_NullBasics {
 
@@ -29,7 +31,7 @@ public class _01_NullBasics {
     void defaultForRefTypes() {
         System.out.println(kkkk); // null
 
-//        // Unintialised
+//        // Uninitialized
 //        String ooo;
 //        System.out.println(ooo.getBytes());
 
@@ -113,7 +115,7 @@ public class _01_NullBasics {
 
         // Cannot use uninitialized - compile error!
         // String jj;
-        // synchronized (jj) { // Not initialised compile error
+        // synchronized (jj) { // Not initialized compile error
         //     System.out.println("no way");
         // }
 

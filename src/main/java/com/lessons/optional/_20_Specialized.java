@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
      - OptionalDouble
      - OptionalInt
      - OptionalLong
-     - Analogous to specialised streams IntStream, DoubleStream, LongStream...
+     - Analogous to specialized streams IntStream, DoubleStream, LongStream...
      - Note there are fewer of these than there are primitives
      - Probably to prevent an explosion of types and because these three handle most cases much like IntStream,
        LongStream, DoubleStream and also functional types such as DoubleSupplier etc
