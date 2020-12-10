@@ -12,7 +12,7 @@ package com.lessons.optional;
      - Then you can decide to throw an exception or map etc
      - This method is not often used in an external stream pipeline like some of the others
  */
-import com.lessons.optional._100_Utils.Employee;
+import com.lessons.optional._99_Utils.Employee;
 
 import java.util.Optional;
 

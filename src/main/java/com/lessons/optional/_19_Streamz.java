@@ -1,12 +1,12 @@
 package com.lessons.optional;
 
-import com.lessons.optional._100_Utils.Employee;
+import com.lessons.optional._99_Utils.Employee;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import static com.lessons.optional._100_Utils.print;
+import static com.lessons.optional._99_Utils.print;
 import static java.util.stream.Collectors.toList;
 
 /*

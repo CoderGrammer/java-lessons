@@ -10,7 +10,7 @@ package com.lessons.optional;
     - As return types their lifecycle is short and they can be garbage collected by hotspot quickly
     - To replace an 'if' statement
 */
-import com.lessons.optional._100_Utils.SearchResultSet;
+import com.lessons.optional._99_Utils.SearchResultSet;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,7 +29,7 @@ public class _07_WhenNotToUse {
     }
 
     // Empty list is fine
-    static List<_100_Utils.Car> fetch() {
+    static List<_99_Utils.Car> fetch() {
         return List.of();
     }
 

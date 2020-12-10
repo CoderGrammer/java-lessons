@@ -1,6 +1,6 @@
 package com.lessons.optional;
 
-import static com.lessons.optional._100_Utils.print;
+import static com.lessons.optional._99_Utils.print;
 
 /*
  - What is it?

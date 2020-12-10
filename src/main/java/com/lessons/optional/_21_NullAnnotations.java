@@ -1,6 +1,6 @@
 package com.lessons.optional;
 
-import com.lessons.optional._100_Utils.Engine;
+import com.lessons.optional._99_Utils.Engine;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -65,7 +65,7 @@ public class _21_NullAnnotations {
 
     void b() {
         // No warning!
-        a(new _100_Utils.Car(1000, null).getEngine());
+        a(new _99_Utils.Car(1000, null).getEngine());
         // Warning
         a(null);
     }

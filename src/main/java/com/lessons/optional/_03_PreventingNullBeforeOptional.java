@@ -1,6 +1,6 @@
 package com.lessons.optional;
 
-import com.lessons.optional._100_Utils.SearchResultSet;
+import com.lessons.optional._99_Utils.SearchResultSet;
 
 import java.util.Objects;
 import java.util.function.Supplier;

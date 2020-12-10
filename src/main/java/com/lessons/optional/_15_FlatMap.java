@@ -1,10 +1,10 @@
 package com.lessons.optional;
 
-import com.lessons.optional._100_Utils.Employee;
+import com.lessons.optional._99_Utils.Employee;
 
 import java.util.Optional;
 
-import static com.lessons.optional._100_Utils.print;
+import static com.lessons.optional._99_Utils.print;
 
 /*
  - flatMap

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.UnaryOperator;
 
-public class _100_Utils {
+public class _99_Utils {
 
     public static void print(Object x) {
         System.out.println(x);
