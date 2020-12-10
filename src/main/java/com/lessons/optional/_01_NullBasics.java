@@ -12,8 +12,6 @@ import java.util.Map;
  - Null was invented by Tony Hoare in 1964 (not in Java!)
  - He called null his 'Billion dollar mistake'
  - 30 odd years later adopted into Java
- - For all reference types the default value is null
- - Usually denoted with a zero address in memory but could be anything and implementation specific
 */
 public class _01_NullBasics {
 
@@ -38,6 +36,53 @@ public class _01_NullBasics {
 //        // Null (not uninitialized)
 //        String ooo = null;
 //        System.out.println(ooo.getBytes());
+    }
+
+    String t;
+    Integer g;
+    // null is the default value for all reference types
+    void defaultValue() {
+        System.out.println(t); // prints null
+        System.out.println(g); // prints null
+    }
+
+    static String x; // Inits to null
+    String y; // Inits to null
+
+    void objects() {
+        // Static and instance variables:
+        System.out.println(x); // null
+        System.out.println(y); // null
+
+        // Member variables:
+        String s = null;
+        String t;
+        System.out.println(s); // null
+        // System.out.println(t); // Illegal! Compile error!
+    }
+
+    static int i; // Inits to null
+    int j; // Inits to null
+
+    void primitives() {
+        // Static and instance variables:
+        System.out.println(i); // null
+        System.out.println(j); // null
+
+        /*
+         - Member variables:
+         - int l = null; // Illegal! Compile error!
+        */
+        int o;
+        /*
+         - System.out.println(l); // null
+         - System.out.println(o); // Illegal! Compile error!
+        */
+    }
+
+    void nullLiteral() {
+        // the null type has one value, the null reference represented by the null literal
+        String s = null;
     }
 
     /*
@@ -69,12 +114,12 @@ public class _01_NullBasics {
         // String null = ""; // Illegal! Compile error!
     }
 
-//    - Null is useful for lazy init pattern - only init when requested
-
-
+    // Null is useful for lazy init pattern - only init when requested
     void lazy() {
         Integer i;
         // do some stuff
+        i = 5;
+        // do some more stuff
     }
 
     /*
@@ -131,23 +176,10 @@ public class _01_NullBasics {
          int j1 = inn; // NPE!
     }
 
-    String t;
-    Integer g;
-    // null is the default value for all reference types
-    void defaultValue() {
-        System.out.println(t); // prints null
-        System.out.println(g); // prints null
-    }
-
     enum A { x, y}
     // Because any reference can be null!
     void enumsRefsCanBeNull() {
         A a = null;
-    }
-
-    void nullLiteral() {
-        // the null type has one value, the null reference represented by the null literal
-        String s = null;
     }
 
     void failure() {
@@ -164,40 +196,6 @@ public class _01_NullBasics {
         int k = a[1]; // NPE
     }
 
-    static String x; // Inits to null
-    String y; // Inits to null
-
-    void objects() {
-        // Static and instance variables:
-        System.out.println(x); // null
-        System.out.println(y); // null
-
-        // Member variables:
-        String s = null;
-        String t;
-        System.out.println(s); // null
-        // System.out.println(t); // Illegal! Compile error!
-    }
-
-    static int i; // Inits to null
-    int j; // Inits to null
-
-    void primitives() {
-        // Static and instance variables:
-        System.out.println(i); // null
-        System.out.println(j); // null
-
-        /*
-         - Member variables:
-         - int l = null; // Illegal! Compile error!
-        */
-        int o;
-        /*
-         - System.out.println(l); // null
-         - System.out.println(o); // Illegal! Compile error!
-        */
-    }
-
     void collectionsInconsistentOnNulls() {
         // Allowed ??
         List<?> a = new ArrayList<>();
@@ -212,5 +210,17 @@ public class _01_NullBasics {
         Map.of(null, null); // NPE
     }
 
+    /*
+     - How is null stored?
+     - Usually denoted with a zero address in memory but could be anything and implementation specific
+     - Not really our concern
+     - Maybe we can think of it as a singleton or a static in that we do not have to worry about storage of lots of
+       nulls
+     - null is of a special null type without having a name
+     - No type can be declared of this special null type
+     - The null reference type can always be cast to any type
+     - We can mostly ignore the fact that there is a special null type as we cant refer to it in any way
+
+    */
 
 }
