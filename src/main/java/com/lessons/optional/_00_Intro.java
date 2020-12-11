@@ -10,6 +10,4 @@ package com.lessons.optional;
  - The problem and solution are so ubiquitous that sub-optimal use really adds up over time
  - We use Java 11 and later touch on Java 14
 */
-public class _00_Intro {
-
-}
+public class _00_Intro { }

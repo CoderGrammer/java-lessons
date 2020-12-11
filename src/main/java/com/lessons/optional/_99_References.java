@@ -9,6 +9,7 @@ package com.lessons.optional;
 
  General:
  https://blog.joda.org/2015/08/java-se-8-optional-pragmatic-approach.html
+ https://openjdk.java.net/projects/valhalla/
 
  Optional as Monad:
  http://blog.vavr.io/the-agonizing-death-of-an-astronaut/
@@ -31,4 +32,5 @@ package com.lessons.optional;
  https://dart.dev/null-safety/understanding-null-safety
 */
 public class _99_References {
+
 }

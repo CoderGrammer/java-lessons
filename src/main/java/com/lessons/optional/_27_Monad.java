@@ -40,7 +40,7 @@ import java.util.function.Function;
          - The same way when we may go from an Optional-present to mapping to a null we should ideally use flatMap (although not needed in java because map can map to null Optional-empty)
          - In the flatMap method you can wrap the output of the first function in an optional in order to invoke the
 */
-public class _25_Monad {
+public class _27_Monad {
 
     public static void main(String[] args) {
 

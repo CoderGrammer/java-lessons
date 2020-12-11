@@ -7,77 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
- - Null represents the absence of a value
- - Null was invented by Tony Hoare in 1964 (not in Java!)
- - He called null his 'Billion dollar mistake'
- - 30 odd years later adopted into Java
-*/
-public class _01_NullBasics {
+public class _01_B_NullBasicsMore {
 
     public static void main(String[] args) {
-    }
-
-    /*
-     - For all reference types the default value is null
-     - Reference types (on the stack) contain a pointer to mem location of the object on the heap
-     - Primitives (on the stack) (instead of containing a pointer) contain the actual value
-     - Primitives get a 'sensible' default but the default for references is null
-     - This is not the same as uninitialized in a local var but you will get a compile error if you try to use it
-    */
-    String kkkk;
-    void defaultForRefTypes() {
-        System.out.println(kkkk); // null
-
-//        // Uninitialized
-//        String ooo;
-//        System.out.println(ooo.getBytes());
-
-//        // Null (not uninitialized)
-//        String ooo = null;
-//        System.out.println(ooo.getBytes());
-    }
-
-    String t;
-    Integer g;
-    // null is the default value for all reference types
-    void defaultValue() {
-        System.out.println(t); // prints null
-        System.out.println(g); // prints null
-    }
-
-    static String x; // Inits to null
-    String y; // Inits to null
-
-    void objects() {
-        // Static and instance variables:
-        System.out.println(x); // null
-        System.out.println(y); // null
-
-        // Member variables:
-        String s = null;
-        String t;
-        System.out.println(s); // null
-        // System.out.println(t); // Illegal! Compile error!
-    }
-
-    static int i; // Inits to null
-    int j; // Inits to null
-
-    void primitives() {
-        // Static and instance variables:
-        System.out.println(i); // null
-        System.out.println(j); // null
-
-        /*
-         - Member variables:
-         - int l = null; // Illegal! Compile error!
-        */
-        int o;
-        /*
-         - System.out.println(l); // null
-         - System.out.println(o); // Illegal! Compile error!
-        */
     }
 
     void nullLiteral() {
@@ -209,18 +141,5 @@ public class _01_NullBasics {
         List.of(null); // NPE
         Map.of(null, null); // NPE
     }
-
-    /*
-     - How is null stored?
-     - Usually denoted with a zero address in memory but could be anything and implementation specific
-     - Not really our concern
-     - Maybe we can think of it as a singleton or a static in that we do not have to worry about storage of lots of
-       nulls
-     - null is of a special null type without having a name
-     - No type can be declared of this special null type
-     - The null reference type can always be cast to any type
-     - We can mostly ignore the fact that there is a special null type as we cant refer to it in any way
-
-    */
 
 }

@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Value;
 
 // See java-lessons-15/src/main/java/HelpfulNPEs.java
-public class _24_Java14HelpfulNPEs {
+public class _25_Java14HelpfulNPEs {
 
     public static void main(String[] args) {
         new A(new B()).getB().getC().getS();
