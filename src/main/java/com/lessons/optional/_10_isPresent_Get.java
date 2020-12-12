@@ -10,7 +10,7 @@ import java.util.Optional;
      - Is a bit like a shortcut of Optional.orElseThrow
      - There are alternatives to isPresent/get depending on what you want to do such as orElse, ifPresent etc
 */
-public class _09_isPresent_Get {
+public class _10_isPresent_Get {
 
     public static void main(String[] args) {
 

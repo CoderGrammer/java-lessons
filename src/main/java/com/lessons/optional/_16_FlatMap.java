@@ -26,7 +26,7 @@ import static com.lessons.optional._99_Utils.print;
          - This will map and then flatten the result
          - So it is only wrapped in one Optional
 */
-public class _15_FlatMap {
+public class _16_FlatMap {
 
     public static void main(String[] args) {
         // Scenario

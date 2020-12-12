@@ -11,7 +11,7 @@ import java.util.stream.Stream;
      - This is now possible as Optional has some of the same methods as streams to facilitate this
          - …and if this is not enough you can convert an Optional to a stream with stream() method
 */
-public class _17_StreamSimilarity {
+public class _18_StreamSimilarity {
 
     public static void main(String[] args) {
         Stream.of("a" ,"b")

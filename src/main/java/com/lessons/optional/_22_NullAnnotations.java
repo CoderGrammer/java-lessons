@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
      - Protect params with Objects.requireNonNull()
      - Consider the Null Object Pattern in limited cases
 */
-public class _21_NullAnnotations {
+public class _22_NullAnnotations {
 
     public static void main(String[] args) {
     }

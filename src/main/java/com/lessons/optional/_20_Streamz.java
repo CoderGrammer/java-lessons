@@ -24,7 +24,7 @@ import static java.util.stream.Collectors.toList;
          - <stream>.flatMap(Optional::stream)
      - This returns a stream of 0 or 1 elements
 */
-public class _19_Streamz {
+public class _20_Streamz {
 
     public static void main(String[] args) {
         // Scenario

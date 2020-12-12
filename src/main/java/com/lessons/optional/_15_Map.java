@@ -9,7 +9,7 @@ import java.util.Optional;
      - Or empty Optional if not present
      - Remember map() always returns an Optional
 */
-public class _14_Map {
+public class _15_Map {
 
     public static void main(String[] args) {
         Optional<String> s = meth()

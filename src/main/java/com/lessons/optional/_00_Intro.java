@@ -1,13 +1,25 @@
 package com.lessons.optional;
 
 /*
- - Why such a lengthy course on Optional?
- - Well nulls in Java can lead to NPEs - a very common sight to most Java developers
- - It can be particularly annoying tracing the real source of the problem
- - There is often much confusion about the best way to handle them from endless null checks to setting default values
-   and everything in between
- - The proposed partial solution to the problem, Optional, is used and abused in almost every PR/MR
- - The problem and solution are so ubiquitous that sub-optimal use really adds up over time
- - We use Java 11 and later touch on Java 14
+ - Welcome to this course on Java Optional and null
+     - Why such a lengthy course?
+     - Optional is here to address some of the issues around handling null references
+     - nulls references in Java can lead to NPEs - a common sight to most Java developers
+     - Can be difficult to trace the real source of the problem
+     - Often much confusion about the best way to handle them from endless null checks to setting default values and
+       everything in between
+     - In my experience there is little consistency in the way null is handled in most apps
+     - The partial solution to the problem, Optional in JDK8
+     - Often used and abused in almost every PR/MR
+     - The problem and solution are so ubiquitous that sub-optimal use adds up over time
+     - So its important to get the design approach right across your project
+     - We will go into a lot of detail about null and Optional
+ - About this course:
+     - We use Java 11 and later touch on Java 14
+     - What are we going to cover?
+     - By the end of course you should be confident:
+         - Understanding the concept of null
+         - In considering the best design approach for null in your application
+         - In using Optional in a sensible way and making best use of its features
 */
 public class _00_Intro { }
