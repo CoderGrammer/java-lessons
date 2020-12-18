@@ -19,6 +19,7 @@ package com.lessons.optional;
  - About this course:
      - We use Java 11 and later touch on Java 14
      - What are we going to cover?
+     - We will ask questions at the end of some chapters to check your understanding
      - By the end of course you should be confident:
          - Understanding the concept of null
          - In considering the best design approach for null in your application
