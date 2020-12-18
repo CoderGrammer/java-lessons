@@ -12,8 +12,8 @@ import java.util.function.UnaryOperator;
 
 public class _99_Utils {
 
-    public static void print(Object x) {
-        System.out.println(x);
+    public static void print(Object s) {
+        System.out.println(s);
     }
 
     @NoArgsConstructor

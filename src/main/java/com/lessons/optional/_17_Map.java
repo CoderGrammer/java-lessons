@@ -15,7 +15,7 @@ public class _17_Map {
         Optional<String> s = meth()
                 .map(String::toUpperCase);
 
-        System.out.println(meth()
+        print(meth()
                .map(String::toUpperCase));
     }
 

@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.lessons.optional._99_Utils.print;
+
 public class _01_B_NullBasicsMore {
 
     public static void main(String[] args) {
@@ -22,12 +24,12 @@ public class _01_B_NullBasicsMore {
     */
     void instanceOf() {
         String s = null;
-        System.out.println(s instanceof String);
+        print(s instanceof String);
     }
 
     // null == null in Java
     void equality() {
-        System.out.println(null == null); // true
+        print(null == null); // true
     }
 
     /*
@@ -60,13 +62,13 @@ public class _01_B_NullBasicsMore {
     */
     void casting() {
         String sx = (String) null;
-        System.out.println(sx + "A");
-        System.out.println(sx.toUpperCase()); // Actually still null
+        print(sx + "Example");
+        print(sx.toUpperCase()); // Actually still null
     }
 
     static class Statik {
         static void str() {
-            System.out.println("hello");
+            print("hello");
         }
     }
 
@@ -87,18 +89,18 @@ public class _01_B_NullBasicsMore {
     void sync() {
         String kk = null;
         synchronized (kk) { // NPE!
-            System.out.println("no way");
+            print("no way");
         }
 
         // Cannot use uninitialized - compile error!
         // String jj;
         // synchronized (jj) { // Not initialized compile error
-        //     System.out.println("no way");
+        //     print("no way");
         // }
 
         // Cannot use null - compile error!
         // synchronized (null) { // Required Object got null
-        //     System.out.println("no way");
+        //     print("no way");
         // }
     }
 
@@ -136,7 +138,7 @@ public class _01_B_NullBasicsMore {
         // Allowed ??
         Map<?, ?> m = new HashMap<>();
         m.put(null, null);
-        System.out.println(m.size());
+        print(m.size());
 
         List.of(null); // NPE
         Map.of(null, null); // NPE

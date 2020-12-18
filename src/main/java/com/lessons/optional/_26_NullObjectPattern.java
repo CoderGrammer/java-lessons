@@ -2,17 +2,22 @@ package com.lessons.optional;
 
 import java.util.Optional;
 
+import static com.lessons.optional._99_Utils.print;
+
 /*
- - A special case of the Strategy Pattern
- - When you delegate behaviour a type such asking a Bike object to Ride, well when you ask a Null object to Ride it
-   would simply do nothing
- - The Null object can be created as a singleton (but remember Optional.empty() is also effectively a singleton)
+ - Example special case of the Strategy Pattern
+ - When you delegate behaviour a type such asking a Bike object to Ride, well when you
+   ask a Null object to Ride it would simply do nothing
+ - The Null object can be created as a singleton (but remember Optional.empty() is also
+   effectively a singleton)
  - When to use:
-     - If your client is fetching member values then use Optional or nothing in the case of bean props
-     - If you client is delegating behaviour to the object it may be useful to use the Null object pattern to save them
-       the work
-     - If your object was more of the bean variety when what would you return from you Null object? Optionals? More
-       nulls? This is why I would suggest not using for bean type classes
+     - If your client is fetching member values then use Optional or nothing in the
+       case of bean props
+     - If you client is delegating behaviour to the object it may be useful to use the
+       Null object pattern to save them the work
+     - If your object was more of the bean variety when what would you return from you
+       Null object? Optionals? More nulls? This is why I would suggest not using for
+       bean type classes
 */
 public class _26_NullObjectPattern {
 
@@ -28,7 +33,7 @@ public class _26_NullObjectPattern {
 
         @Override
         public void move() {
-            System.out.println("Ride");
+            print("Ride");
         }
     }
 
@@ -36,7 +41,7 @@ public class _26_NullObjectPattern {
 
         @Override
         public void move() {
-            System.out.println("Drive");
+            print("Drive");
         }
     }
 

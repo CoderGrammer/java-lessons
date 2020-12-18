@@ -11,8 +11,10 @@ import static java.util.stream.Collectors.toList;
 
 /*
  - stream
-     - This method allows you to treat an optional as a stream benefitting from all the stream methods
-     - This method is often useful with another stream say from a collection of Cars for example
+     - This method allows you to treat an optional as a stream benefiting from all the
+       stream methods
+     - This method is often useful with another stream say from a collection of Cars
+       for example
      - Usually used with that other streams flatMap method
      - Where you have an Optional element that may be empty
      - It returns a stream with the value or an empty stream
@@ -42,7 +44,8 @@ public class _22_Streamz {
         var b = emps
                 .stream()
                 // Ugly!
-                .flatMap(g -> g.getAge().isPresent() ? Stream.of(g.getAge()) : Stream.of())
+                .flatMap(g -> g.getAge().isPresent() ? Stream.of(g.getAge()) :
+                        Stream.of())
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .collect(toList());

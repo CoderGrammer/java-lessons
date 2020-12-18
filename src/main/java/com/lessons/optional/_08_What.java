@@ -1,9 +1,12 @@
 package com.lessons.optional;
 
+
 import java.util.Optional;
 
+import static com.lessons.optional._99_Utils.print;
+
 /*
- - A container object which may or may not contain a non-null value
+ - Example container object which may or may not contain a non-null value
  - If a value is present, it is called present
  - If not, it is called empty (or absent)
 */
@@ -13,7 +16,7 @@ public class _08_What {
 
         Optional<String> s = Optional.empty();
 
-        System.out.println(meth()
+        print(meth()
                                    .map(String::length)
                                    .orElse(0));
     }

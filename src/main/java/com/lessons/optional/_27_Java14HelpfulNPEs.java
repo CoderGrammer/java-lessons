@@ -39,7 +39,7 @@ public class _27_Java14HelpfulNPEs {
          - We refer to something for which there is an index because we done want
          - IndexOutOfBoundsException
         */
-        System.out.println(multi[1][0][0].toString());
+        print(multi[1][0][0].toString());
     }
 
 }

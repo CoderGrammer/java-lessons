@@ -14,12 +14,13 @@ import static com.lessons.optional._99_Utils.print;
      - Remember flatMap() always returns an Optional
  - map vs flatMap
      - Generally
-         - flatMap is useful when the map operation results in an item double nested in the containing type e.g.
-           Stream of Streams or Optional of Optional
+         - flatMap is useful when the map operation results in an item double nested in
+           the containing type e.g. Stream of Streams or Optional of Optional
      - Specifically to Optional
          - Both map and flatMap return an Optional after applying some function
          - However in map you pass in a function which maps to x
-         - If x itself happens to be an Optional then you will end up with a double wrapped Optional
+         - If x itself happens to be an Optional then you will end up with a double
+           wrapped Optional
          - In this scenario you could instead call flatMap
          - flatMaps signature mandates that the function passed in will return an Optional
          - this is the Optional that will get flattened

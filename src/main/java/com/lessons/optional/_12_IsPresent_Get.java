@@ -8,7 +8,8 @@ import java.util.Optional;
      - Get is considered problematic because it throws an exception if empty
      - Should not be called without a check first
      - Is a bit like a shortcut of Optional.orElseThrow
-     - There are alternatives to isPresent/get depending on what you want to do such as orElse, ifPresent etc
+     - There are alternatives to isPresent/get depending on what you want to do such as
+       orElse, ifPresent etc
 */
 public class _12_IsPresent_Get {
 

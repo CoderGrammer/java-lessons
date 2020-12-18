@@ -10,7 +10,8 @@ package com.lessons.optional;
      - If the element is there and matches the predicate returns an Optional of the value
          - …otherwise empty optional
      - Then you can decide to throw an exception or map etc
-     - This method is not often used in an external stream pipeline like some of the others
+     - This method is not often used in an external stream pipeline like some of the
+       others
  */
 import com.lessons.optional._99_Utils.Employee;
 
@@ -22,7 +23,9 @@ public class _19_Filter {
         Optional<Employee> employee = Optional.of(new Employee());
 
         // Employee with more than 1 year of service or empty
-        Optional<Employee> e = employee.isPresent() && employee.get().getYrsOfService() > 1 ? employee : Optional.empty();
+        Optional<Employee> e = employee.isPresent() && employee
+                .get()
+                .getYrsOfService() > 1 ? employee : Optional.empty();
 
         // Better
         Optional<Employee> e1 = employee.filter(f -> f.getYrsOfService() > 1);

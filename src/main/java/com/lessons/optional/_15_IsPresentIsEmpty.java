@@ -6,8 +6,8 @@ public class _15_IsPresentIsEmpty {
 
     public static void main(String[] args) {
         Optional<Integer> o = Optional.of(1);
-        System.out.println(o.isPresent()); // True
-        System.out.println(o.isEmpty()); // False - Only added in Java 11!
+        print(o.isPresent()); // True
+        print(o.isEmpty()); // False - Only added in Java 11!
     }
 
 }

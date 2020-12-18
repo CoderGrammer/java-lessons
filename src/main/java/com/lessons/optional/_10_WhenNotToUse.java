@@ -7,7 +7,8 @@ package com.lessons.optional;
     - as params to a method (unless you know the callers have an optional)
     - To represent internal class state
     - in constructors
-    - As return types their lifecycle is short and they can be garbage collected by hotspot quickly
+    - As return types their lifecycle is short and they can be garbage collected by
+      hotspot quickly
     - To replace an 'if' statement
 */
 import com.lessons.optional._99_Utils.SearchResultSet;
@@ -41,7 +42,8 @@ public class _10_WhenNotToUse {
         /*
          - One approach
          - But Optional is not Serializable
-         - This violates the bean laws. Sometimes you have a requirement that your beans are 'proper' beans such as in
+         - This violates the bean laws. Sometimes you have a requirement that your beans
+           are 'proper' beans such as in
          - some web contexts so they can be deflated and inflated
         */
         Optional<Tail> tail;
@@ -51,7 +53,8 @@ public class _10_WhenNotToUse {
 
         /*
          - Personally I don't like it!
-         - "I think routinely using it as a return value for getters would definitely be over-use." Brian Goetz
+         - "I think routinely using it as a return value for getters would definitely be
+           over-use." Brian Goetz
          - Where present more objects polluting the heap
          - More verbose also on every getter!
          - May also cause issues with bean handlers

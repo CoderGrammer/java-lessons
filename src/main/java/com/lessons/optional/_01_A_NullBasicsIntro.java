@@ -6,6 +6,7 @@ package com.lessons.optional;
  - He called null his 'Billion dollar mistake'
  - 30 odd years later adopted into Java and a host of other languages
  - In reality he didn't invent null the concept but rather the null reference
- - null or the absence of a value is a real concept e.g. animal.getBeak but the animal is a fish
+ - null or the absence of a value is a real concept e.g. animal.getBeak but the animal is
+   a fish
 */
 public class _01_A_NullBasicsIntro { }

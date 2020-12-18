@@ -9,7 +9,7 @@ import com.google.common.base.Optional;
  - ...this is because in Project Valhalla introduces value types
  - Value types do not have identity but Serialized objects have identity
  - Serialization inherently depends on identity
- - JDK rules require back and forward compaitibility across releases
+ - JDK rules require back and forward compatibility across releases
  - Missing useful methods like flatMap, stream, filter...
  - Guava recommend you use the Java version
  - May be deprecated at some point

@@ -10,7 +10,8 @@ import java.util.stream.IntStream;
      - OptionalLong
      - Analogous to specialized streams IntStream, DoubleStream, LongStream...
      - Note there are fewer of these than there are primitives
-     - Probably to prevent an explosion of types and because these three handle most cases much like IntStream,
+     - Probably to prevent an explosion of types and because these three handle most
+       cases much like IntStream,
        LongStream, DoubleStream and also functional types such as DoubleSupplier etc
      - Note, these optionals do not have all the methods of Optional
      - They do not extent Optional
@@ -20,7 +21,8 @@ import java.util.stream.IntStream;
 public class _23_Specialized {
 
     public static void main(String[] args) {
-        OptionalDouble average = IntStream.of(1, 2).average();
+        OptionalDouble average = IntStream.of(1,
+                                              2).average();
         // Stream could be empty... in which case this will be an empty OptionalDouble
         OptionalDouble average2 = IntStream.of().average();
     }

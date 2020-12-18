@@ -11,9 +11,12 @@ import static java.util.stream.Collectors.toList;
  - Optional consumes 4x the memory of a simple reference
  - Can lead to cache misses
  - You have a dependent load
- - Note if Optional becomes a value type (project Valhalla) then this cost might not be an issue
- - One of the things to keep in mind is that primitives in java are a lot cheaper than objects
- - If you want to use an Optional to represent something that could be represented by a primitive then you have to
+ - Note if Optional becomes a value type (project Valhalla) then this cost might not be an
+   issue
+ - One of the things to keep in mind is that primitives in java are a lot cheaper than
+   objects
+ - If you want to use an Optional to represent something that could be represented by a
+   primitive then you have to
    pay the cost of the wrapper object instance but also the Optional
 */
 public class _11_OverUse {

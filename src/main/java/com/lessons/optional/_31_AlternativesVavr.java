@@ -8,7 +8,8 @@ import java.util.Optional;
  - It is an interface
  - It has two implementations/concrete types; Some and None
  - It is Serializable
- - Another key diff if that in java a .map that results in null returns Optional.empty(), in vavr it would be Some(null)
+ - Another key diff if that in java a .map that results in null returns Optional.empty(),
+   in vavr it would be Some(null)
  - This can cause NPEs in VAVR
 */
 public class _31_AlternativesVavr {
@@ -18,17 +19,20 @@ public class _31_AlternativesVavr {
     }
 
     /*
-     - The anomaly is that it it allows Some(null) whereas Optional Present with null is not possible
+     - The anomaly is that it it allows Some(null) whereas Optional Present with null is
+       not possible
      */
     void throwsNPE() {
         Option.of(1)
-                .map(i -> (String) null) // Maps to Some(null) - but in Javas Optional this would be Empty Optional
+                .map(i -> (String) null) // Maps to Some(null) - but in Javas Optional
+                // this would be Empty Optional
                 .map(String::intern); // Promptly throws a NPE!
 
         // Is this a problem? Well yes but there is a better approach in VAVR:
         Option.of(1)
                 .map(i -> (String) null)
-                .flatMap(s -> Option.of(s).map(String::intern)); // Note Option.of is None in this case
+                .flatMap(s -> Option.of(s).map(String::intern)); // Note Option.of is None
+                // in this case
 
         /*
          - Why is this better?
@@ -40,7 +44,8 @@ public class _31_AlternativesVavr {
                 .map(s -> (String) null) // Computational context changes here to Empty
                 .map(String::toUpperCase);
 
-        // In actual fact flatMap should be used for context changes as in the VAVR Option case
+        // In actual fact flatMap should be used for context changes as in the VAVR Option
+        // case
     }
 
 

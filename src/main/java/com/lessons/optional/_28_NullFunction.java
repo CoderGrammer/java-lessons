@@ -6,7 +6,7 @@ import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
 /*
- - A null function is a function which makes no changes
+ - Example null function is a function which makes no changes
  - aka NOP aka NOOP
 */
 public class _28_NullFunction {

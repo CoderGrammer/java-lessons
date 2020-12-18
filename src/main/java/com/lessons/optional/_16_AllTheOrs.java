@@ -11,14 +11,16 @@ public class _16_AllTheOrs {
     void or() {
         Optional<Integer> o = Optional.of(1);
         Optional<Integer> or = o.or(() -> Optional.of(2));
-        // Use this when you want to return an Optional and you have something that yields an alternative Optional
+        // Use this when you want to return an Optional and you have something that yields
+        // an alternative Optional
     }
 
     // orElse
     void orElse() {
         Optional<Integer> o = Optional.of(1);
         Integer i = o.orElse(2);
-        // Use this when you want to return a value that is not wrapped in an Optional but have an alternate value too
+        // Use this when you want to return a value that is not wrapped in an Optional but
+        // have an alternate value too
 
         // What if you actually want a null?
         o.orElse(null);
@@ -30,7 +32,8 @@ public class _16_AllTheOrs {
         Integer integer = o.orElseGet(() -> 2);
         /*
          - Use this instead of orElse when:
-         - you want to return a value that is not wrapped in an Optional but have an alternate value too
+         - you want to return a value that is not wrapped in an Optional but have an
+           alternate value too
          - ...but it is expensive to compute
         */
     }
@@ -52,7 +55,8 @@ public class _16_AllTheOrs {
         Integer integer2 = o.orElseThrow(IllegalStateException::new);
         /*
          - Use this when an absence of a value i.e. an empty Optional indicates an error
-         - ...but you want a specific exception, even more so if it is expensive to construct
+         - ...but you want a specific exception, even more so if it is expensive to
+           construct
         */
     }
 
@@ -62,7 +66,8 @@ public class _16_AllTheOrs {
         var third = Optional.empty();
 
         /*
-         - Map is no good in this case because it is about transforming a value that is present
+         - Map is no good in this case because it is about transforming a value that is
+           present
          - first.map()
         */
 

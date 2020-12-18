@@ -48,7 +48,7 @@ public class _06_Basics {
         */
     }
 
-    // A method that returns Optional should never return null
+    // Example method that returns Optional should never return null
     Optional<String> getString() {
         return null; // Never do this!
     }
@@ -62,8 +62,8 @@ public class _06_Basics {
 
     /*
      - Optional is final and immutable
-     - It is value-based therefore identity sensitive ops incl reference equality (==), identity hash code, or
-       synchronization should be avoided
+     - It is value-based therefore identity sensitive ops incl reference equality (==),
+       identity hash code, or synchronization should be avoided
      - Therefore it is also thread safe
      - Optional is not serializable so don’t use it as bean properties
     */
@@ -86,20 +86,24 @@ public class _06_Basics {
     void constructing() {
         Optional<String> present = Optional.of("No Nulls pls");
         Optional<String> error = Optional.of(null); // NPE
-        Optional<String> empty = Optional.ofNullable(null); // Fine. Mainly for interfacing with legacy code
+        Optional<String> empty = Optional.ofNullable(null); // Fine. Mainly for
+        // interfacing with legacy code
     }
 
     /*
      - You cannot put a null inside an Optional, Optional.of(null) will generate a NPE
-     - It can be empty of course e.g. Optional.ofNullable(null) but this does not store null
+     - It can be empty of course e.g. Optional.ofNullable(null) but this does not store
+       null
     */
     void storage() {
         Optional.of(null); // Throws NoSuchElementException (not NPE)
-        Optional.ofNullable(null); // Equivalent to Optional.empty(), the Null is not stored
+        Optional.ofNullable(null); // Equivalent to Optional.empty(), the Null is not
+        // stored
     }
 
     /*
-     - Keep in mind that there is almost nothing to do with the empty other than knowing its empty
+     - Keep in mind that there is almost nothing to do with the empty other than knowing
+       its empty
      - The downstream methods all do either:
          - use a value
          - do something if no value is present

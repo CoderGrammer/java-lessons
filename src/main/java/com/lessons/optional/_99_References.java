@@ -30,6 +30,10 @@ package com.lessons.optional;
 
  Sound Null Safety in Dart:
  https://dart.dev/null-safety/understanding-null-safety
+
+ JTI Optimizations
+ https://www.waitingforcode.com/java/jvm-jit-optimizations/read
+
 */
 public class _99_References {
 

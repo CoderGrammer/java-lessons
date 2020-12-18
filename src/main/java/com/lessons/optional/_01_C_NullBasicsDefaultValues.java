@@ -1,25 +1,30 @@
 package com.lessons.optional;
 
+import static com.lessons.optional._99_Utils.print;
+
 public class _01_C_NullBasicsDefaultValues {
 
     /*
      - For all reference types the default value is null
-     - Reference types (on the stack) contain a pointer to mem location of the object on the heap
-     - Primitives (on the stack) (instead of containing a pointer) contain the actual value
+     - Reference types (on the stack) contain a pointer to mem location of the object on
+       the heap
+     - Primitives (on the stack) (instead of containing a pointer) contain the actual
+       value
      - Primitives get a 'sensible' default but the default for references is null
-     - This is not the same as uninitialized in a local var but you will get a compile error if you try to use it
+     - This is not the same as uninitialized in a local var but you will get a compile
+       error if you try to use it
     */
     String k;
     void defaultForRefTypes() {
-        System.out.println(k); // null
+        print(k); // null
 
-//        // Member uninitialized
-//        String o;
-//        System.out.println(o.getBytes());
-
-//        // Null (not uninitialized)
-//        String ooo = null;
-//        System.out.println(ooo.getBytes());
+       // Member uninitialized
+       // String o;
+       // print(o.getBytes());
+       //
+       // // Null (not uninitialized)
+       // String ooo = null;
+       // print(ooo.getBytes());
     }
 
     static int i; // Inits to null
@@ -27,8 +32,8 @@ public class _01_C_NullBasicsDefaultValues {
 
     void primitives() {
         // Static and instance variables:
-        System.out.println(i); // null
-        System.out.println(j); // null
+        print(i); // null
+        print(j); // null
 
         /*
          - Member variables:
@@ -36,8 +41,8 @@ public class _01_C_NullBasicsDefaultValues {
         */
         int o;
         /*
-         - System.out.println(l); // null
-         - System.out.println(o); // Illegal! Compile error!
+         - print(l); // null
+         - print(o); // Illegal! Compile error!
         */
     }
 
@@ -45,8 +50,8 @@ public class _01_C_NullBasicsDefaultValues {
     Integer g;
     // null is the default value for all reference types
     void defaultValue() {
-        System.out.println(t); // prints null
-        System.out.println(g); // prints null
+        print(t); // prints null
+        print(g); // prints null
     }
 
     static String x; // Inits to null
@@ -54,14 +59,14 @@ public class _01_C_NullBasicsDefaultValues {
 
     void objects() {
         // Static and instance variables:
-        System.out.println(x); // null
-        System.out.println(y); // null
+        print(x); // null
+        print(y); // null
 
         // Member variables:
         String s = null;
         String t;
-        System.out.println(s); // null
-        // System.out.println(t); // Illegal! Compile error!
+        print(s); // null
+        // print(t); // Illegal! Compile error!
     }
 
 }

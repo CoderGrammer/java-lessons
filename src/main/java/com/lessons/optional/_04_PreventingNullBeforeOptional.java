@@ -5,6 +5,8 @@ import com.lessons.optional._99_Utils.SearchResultSet;
 import java.util.Objects;
 import java.util.function.Supplier;
 
+import static com.lessons.optional._99_Utils.print;
+
 /*
  - Other ways to prevent null, some of which are still relevant
 */
@@ -13,19 +15,19 @@ public class _04_PreventingNullBeforeOptional {
     public static void main(String[] args) {
         String s = null;
         // Ternary
-        System.out.println(s == null ? "Nothing" : s);
+        print(s == null ? "Nothing" : s);
 
         // Use external method that handles null
         Integer i = null;
-        System.out.println(i.toString()); // NPE!
-        System.out.println(String.valueOf(i)); // No NPE
+        print(i.toString()); // NPE!
+        print(String.valueOf(i)); // No NPE
 
         /*
          - Use a method to evaluate a supplier
          - Good for method chains
         */
         SearchResultSet sr = null;
-        System.out.println(nullableChain(
+        print(nullableChain(
                 () -> sr.getBestMatch().getEngine().getSize().toUpperCase()));
 
         /*
@@ -66,8 +68,30 @@ public class _04_PreventingNullBeforeOptional {
         // Defensively throw an exception manually
         String arg = null;
         if (arg == null) {
-            throw new IllegalArgumentException("Argument arg to the method must not be null");
+            throw new IllegalArgumentException("Argument arg to the method must not be " +
+                                                       "null");
         }
+    }
+
+    static class UnnecessaryNullCheck {
+
+        void a() {
+            b("never null");
+        }
+
+        void b(String s) {
+            /*
+             - The compiler knows that this can never be null
+             - The JIT compiler uses 'uncommon trap' to remove these speeding up the code
+             - It can also reinstate it if it discovers that this is indeed required
+             - Java -> Compile -> Bytecode -> JIT Compile -> Machine code
+            */
+            if (s == null) {
+                return;
+            }
+            print(s);
+        }
+
     }
 
     /*
