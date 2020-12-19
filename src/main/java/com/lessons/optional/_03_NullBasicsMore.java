@@ -158,6 +158,7 @@ public class _03_NullBasicsMore {
         m.put(null, null);
         print(m.size());
 
+        // New factory methods
         List.of(null); // NPE
         Map.of(null, null); // NPE
     }
