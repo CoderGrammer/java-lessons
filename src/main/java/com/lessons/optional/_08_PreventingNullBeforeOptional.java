@@ -23,6 +23,20 @@ public class _08_PreventingNullBeforeOptional {
         print(String.valueOf(i)); // No NPE
 
         /*
+         - Use a try catch to catch the runtime exception
+         - Not considered a great idea to use exceptions for flow control
+         - Generally not considered ideal to catch Runtime exceptions e.g. the null
+           could have come from somewhere else
+         - There are more expressive ways handle this
+        */
+        String t = null;
+        try {
+            print(t.toUpperCase());
+        } catch (NullPointerException n) {
+            print("NO VALUE");
+        }
+
+        /*
          - Use a method to evaluate a supplier
          - Good for method chains
         */

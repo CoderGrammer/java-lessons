@@ -12,7 +12,7 @@ import static com.lessons.optional._99_Utils.print;
 public class _03_NullBasicsMore {
 
     public static void main(String[] args) {
-        new _03_NullBasicsMore().instanceOf();
+        new _03_NullBasicsMore().equality();
     }
 
     void nullLiteral() {
@@ -24,9 +24,8 @@ public class _03_NullBasicsMore {
      - null is not an instanceof anything
     */
     void instanceOf() {
-
-        Employee e = new Employee();
-        print(e instanceof Employee);
+        // Employee e = new Employee();
+        // print(e instanceof Employee);
 
         String s = null;
         print(s instanceof String);
@@ -34,22 +33,25 @@ public class _03_NullBasicsMore {
 
     // null == null in Java
     void equality() {
+        // Employee e = new Employee();
+        // Employee e2 = new Employee();
+        // print(e == e2);
+
         print(null == null); // true
     }
 
     /*
      - null is not an object
+     - it is a reference to no object
      - null is a 'reserved word' aka 'keyword'
      - reserved words are always lowercase
      - There are around 50 of them
      - Cannot be used as an identifier
      - null is a literal value
      - it is case sensitive so null is not the same as Null
-
-     - one way to handle null is to try/catch the NPE
-     - Null improvements in Java 14
     */
     void reserved() {
+        // String s = null;
         // String null = ""; // Illegal! Compile error!
     }
 
