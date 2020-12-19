@@ -16,11 +16,12 @@ public class _03_NullBasicsMore {
     }
 
     void nullLiteral() {
-        // the null type has one value, the null reference represented by the null literal
+        // The null type has one value, the null reference represented by the null literal
         String s = null;
     }
 
     /*
+     - Checks if an object is of a given type
      - null is not an instanceof anything
     */
     void instanceOf() {
@@ -31,11 +32,17 @@ public class _03_NullBasicsMore {
         print(s instanceof String);
     }
 
-    // null == null in Java
+    /*
+     - null == null in Java
+     - == checks if the references points to the same memory location
+     - == is true if two refs point to the same actual object
+     - whereas .equals checks if objects are meaningfully equivalent
+    */
     void equality() {
         // Employee e = new Employee();
         // Employee e2 = new Employee();
         // print(e == e2);
+        // print(e.equals(e2);
 
         print(null == null); // true
     }
@@ -64,6 +71,7 @@ public class _03_NullBasicsMore {
     }
 
     /*
+     - Casting allows you to convert one type to another
      - Casting makes no difference
      - Remember Strings are immutable
     */
@@ -74,9 +82,11 @@ public class _03_NullBasicsMore {
     }
 
     static class Statik {
+
         static void str() {
             print("hello");
         }
+
     }
 
     /*
@@ -90,12 +100,13 @@ public class _03_NullBasicsMore {
     }
 
     /*
-     - You cannot sync on a null
+     - Synchronization means only one thread can access a piece of code at a time
+     - You cannot synchronize on a null
      - Runtime problems are worse than compile time
     */
     void sync() {
-        String kk = null;
-        synchronized (kk) { // NPE!
+        String k = null;
+        synchronized (k) { // NPE!
             print("no way");
         }
 
@@ -117,7 +128,7 @@ public class _03_NullBasicsMore {
          int j1 = inn; // NPE!
     }
 
-    enum A { x, y}
+    enum A { x, y }
     // Because any reference can be null!
     void enumsRefsCanBeNull() {
         A a = null;
