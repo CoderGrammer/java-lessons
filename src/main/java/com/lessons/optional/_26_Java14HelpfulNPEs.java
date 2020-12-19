@@ -3,9 +3,10 @@ package com.lessons.optional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Value;
+import static com.lessons.optional._99_Utils.print;
 
 // See java-lessons-15/src/main/java/HelpfulNPEs.java
-public class _27_Java14HelpfulNPEs {
+public class _26_Java14HelpfulNPEs {
 
     public static void main(String[] args) {
         new A(new B()).getB().getC().getS();

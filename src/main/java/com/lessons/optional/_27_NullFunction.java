@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  - Example null function is a function which makes no changes
  - aka NOP aka NOOP
 */
-public class _28_NullFunction {
+public class _27_NullFunction {
 
     // All these are equivalent null Function examples
     Function<String, String> f = Function.identity();

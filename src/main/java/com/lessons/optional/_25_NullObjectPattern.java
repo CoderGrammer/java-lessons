@@ -19,10 +19,10 @@ import static com.lessons.optional._99_Utils.print;
        Null object? Optionals? More nulls? This is why I would suggest not using for
        bean type classes
 */
-public class _26_NullObjectPattern {
+public class _25_NullObjectPattern {
 
     public static void main(String[] args) {
-        new _26_NullObjectPattern().demo();
+        new _25_NullObjectPattern().demo();
     }
 
     interface Vehicle {

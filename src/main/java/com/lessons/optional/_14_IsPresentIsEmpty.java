@@ -1,8 +1,9 @@
 package com.lessons.optional;
 
 import java.util.Optional;
+import static com.lessons.optional._99_Utils.print;
 
-public class _15_IsPresentIsEmpty {
+public class _14_IsPresentIsEmpty {
 
     public static void main(String[] args) {
         Optional<Integer> o = Optional.of(1);

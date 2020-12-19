@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
      - They are missing filter, map and flatMap, ofNullable methods
      - The purpose of these is to mitigate the effect of boxing/unboxing
 */
-public class _23_Specialized {
+public class _22_Specialized {
 
     public static void main(String[] args) {
         OptionalDouble average = IntStream.of(1,

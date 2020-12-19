@@ -12,7 +12,7 @@ import java.util.Optional;
    in vavr it would be Some(null)
  - This can cause NPEs in VAVR
 */
-public class _31_AlternativesVavr {
+public class _30_AlternativesVavr {
 
     public static void main(String[] args) {
         Option<Integer> o = Option.of(1);

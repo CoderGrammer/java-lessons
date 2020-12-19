@@ -15,7 +15,7 @@ import com.google.common.base.Optional;
  - May be deprecated at some point
  - The lead of Guava was on the expert group for java
 */
-public class _30_AlternativesGuava {
+public class _29_AlternativesGuava {
 
     public static void main(String[] args) {
 

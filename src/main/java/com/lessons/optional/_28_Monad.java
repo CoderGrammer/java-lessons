@@ -2,6 +2,7 @@ package com.lessons.optional;
 
 import java.util.Optional;
 import java.util.function.Function;
+import static com.lessons.optional._99_Utils.print;
 
 /*
  - Is it a monad?
@@ -53,7 +54,7 @@ import java.util.function.Function;
          - In the flatMap method you can wrap the output of the first function in an
            optional in order to invoke the
 */
-public class _29_Monad {
+public class _28_Monad {
 
     public static void main(String[] args) {
 

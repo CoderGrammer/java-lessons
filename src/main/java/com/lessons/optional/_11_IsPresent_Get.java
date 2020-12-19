@@ -11,7 +11,7 @@ import java.util.Optional;
      - There are alternatives to isPresent/get depending on what you want to do such as
        orElse, ifPresent etc
 */
-public class _12_IsPresent_Get {
+public class _11_IsPresent_Get {
 
     public static void main(String[] args) {
 

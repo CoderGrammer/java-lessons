@@ -1,6 +1,7 @@
 package com.lessons.optional;
 
 import java.util.Optional;
+import static com.lessons.optional._99_Utils.print;
 
 /*
  - map
@@ -9,7 +10,7 @@ import java.util.Optional;
      - Or empty Optional if not present
      - Remember map() always returns an Optional
 */
-public class _17_Map {
+public class _16_Map {
 
     public static void main(String[] args) {
         Optional<String> s = meth()

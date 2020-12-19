@@ -13,7 +13,7 @@ import java.util.stream.Stream;
          - …and if this is not enough you can convert an Optional to a stream with
          stream() method
 */
-public class _20_StreamSimilarity {
+public class _19_StreamSimilarity {
 
     public static void main(String[] args) {
         Stream.of("a",
