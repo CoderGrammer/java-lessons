@@ -27,6 +27,15 @@ public class _06_NullDesignConsiderations {
         be sure what null means in this context
       - This kind of ambiguity is dangerous and needs to be addressed from a design
         perspective
+      - In the real world null tends to be used to represent:
+         - The absence of a value: e.g. e.getMiddleName()
+         - A value which is not known: e.g. b.getFireHazards() - you don't know the
+           value yet and may never know
+         - Something not yet initialized: e.g. g.getCount() - you intend to populate
+           later
+         - The end of a pipeline of data (a termination condition) - x.getNextItem()
+         - A specific value in your context e.g. if an employee.getStatus() is null
+           then they are to be fired - constitutes a DSL and usually a bad idea
      */
      void missingValue() {
          // getBuilding().getFireHazards() - if null what does it mean??

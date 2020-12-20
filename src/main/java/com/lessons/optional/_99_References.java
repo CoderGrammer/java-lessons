@@ -6,6 +6,7 @@ package com.lessons.optional;
 
  Null Mistake:
  https://www.youtube.com/watch?v=YYkOWzrO3xg
+ https://en.wikipedia.org/wiki/Tony_Hoare
 
  General:
  https://blog.joda.org/2015/08/java-se-8-optional-pragmatic-approach.html

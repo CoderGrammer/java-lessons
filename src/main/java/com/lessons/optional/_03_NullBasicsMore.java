@@ -21,6 +21,30 @@ public class _03_NullBasicsMore {
     }
 
     /*
+     - Technically does have a special null 'type'
+     - This type has no name
+     - It can be cast to any type
+     - But does not extend Object
+     - Does not live on the heap
+     - The null literal is the only possible value of the special 'null' type
+     - You cannot refer to this type in any way
+     - You cannot declare something with this type directly
+     - You cannot cast to it
+     - You might as well imagine it does not exist
+     - Best to thing of it as a 'special literal that can be of any type'
+    */
+    void isNullAnObject() {
+        // print(null.toString());
+    }
+
+    /*
+     - See https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)
+    */
+    void equalsShouldAlwaysReturnFalseWhenPassedANull() {
+        print("test".equals(null));
+    }
+
+    /*
      - Checks if an object is of a given type
      - null is not an instanceof anything
     */
@@ -30,6 +54,10 @@ public class _03_NullBasicsMore {
 
         String s = null;
         print(s instanceof String);
+
+        // Not allowed:
+        // print(null instanceof null);
+
     }
 
     /*
