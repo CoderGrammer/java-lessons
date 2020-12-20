@@ -34,7 +34,9 @@ public class _04_NullBasicsDefaultValues {
         // Static and instance variables:
         print(i); // null
         print(j); // null
+    }
 
+    void primitivesLocal() {
         /*
          - Member variables:
          - int l = null; // Illegal! Compile error!
@@ -61,7 +63,9 @@ public class _04_NullBasicsDefaultValues {
         // Static and instance variables:
         print(x); // null
         print(y); // null
+    }
 
+    void objectsLocal() {
         // Member variables:
         String s = null;
         String t;

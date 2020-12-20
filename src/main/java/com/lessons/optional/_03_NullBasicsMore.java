@@ -19,12 +19,12 @@ public class _03_NullBasicsMore {
     }
 
     /*
-     - Technically does have a special null 'type'
+     - Technically does have a special 'null type'
      - This type has no name
      - It can be cast to any type
      - But does not extend Object
      - Does not live on the heap
-     - The null literal is the only possible value of the special 'null' type
+     - The null literal is the only possible value of the special 'null type'
      - You cannot refer to this type in any way
      - You cannot declare something with this type directly
      - You cannot cast to it
