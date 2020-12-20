@@ -31,7 +31,7 @@ public class _06_NullDesignConsiderations {
          - The absence of a value: e.g. e.getMiddleName()
          - A value which is not known: e.g. b.getFireHazards() - you don't know the
            value yet and may never know
-         - Something not yet initialized: e.g. g.getCount() - you intend to populate
+         - Something not yet initialized: e.g. g.getCount() - you intend to init
            later
          - The end of a pipeline of data (a termination condition) - x.getNextItem()
          - A specific value in your context e.g. if an employee.getStatus() is null

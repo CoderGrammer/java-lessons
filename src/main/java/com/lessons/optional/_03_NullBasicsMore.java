@@ -4,16 +4,14 @@ import com.lessons.optional._99_Utils.Employee;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static com.lessons.optional._99_Utils.print;
 
 public class _03_NullBasicsMore {
-
-    public static void main(String[] args) {
-        new _03_NullBasicsMore().equality();
-    }
 
     void nullLiteral() {
         // The null type has one value, the null reference represented by the null literal
@@ -35,6 +33,18 @@ public class _03_NullBasicsMore {
     */
     void isNullAnObject() {
         // print(null.toString());
+        // null is NOT an object!
+    }
+
+    /*
+     - If 100 references are assigned null - there are not 100 nulls
+     - There is only one
+     - I like to think of it conceptually as a singleton
+    */
+    void thereIsOnlyReallyEffectivelyOneNull() {
+        List l = null;
+        ArrayList i = null;
+        print(l == i);
     }
 
     /*
@@ -47,22 +57,22 @@ public class _03_NullBasicsMore {
     /*
      - Checks if an object is of a given type
      - null is not an instanceof anything
+     - null is not an instanceof null (at least you can't check)
     */
     void instanceOf() {
         // Employee e = new Employee();
         // print(e instanceof Employee);
 
-        String s = null;
-        print(s instanceof String);
+        // String s = null;
+        // print(s instanceof String);
 
         // Not allowed:
         // print(null instanceof null);
-
     }
 
     /*
      - null == null in Java
-     - == checks if the references points to the same memory location
+     - == checks if the references point to the same memory location
      - == is true if two refs point to the same actual object
      - whereas .equals checks if objects are meaningfully equivalent
     */
@@ -72,7 +82,7 @@ public class _03_NullBasicsMore {
         // print(e == e2);
         // print(e.equals(e2);
 
-        print(null == null); // true
+        // print(null == null); // true
     }
 
     /*
@@ -190,5 +200,6 @@ public class _03_NullBasicsMore {
         List.of(null); // NPE
         Map.of(null, null); // NPE
     }
+
 
 }
