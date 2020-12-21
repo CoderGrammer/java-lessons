@@ -2,6 +2,7 @@ package com.lessons.optional;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.With;
@@ -16,6 +17,7 @@ public class _99_Utils {
         System.out.println(s);
     }
 
+    @EqualsAndHashCode
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Employee {

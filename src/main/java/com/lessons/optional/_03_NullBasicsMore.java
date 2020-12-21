@@ -9,11 +9,12 @@ import java.util.Map;
 
 import static com.lessons.optional._99_Utils.print;
 
+/*
+ - A few basics:
+     - We use lombok see https://projectlombok.org/
+     - We use the print() method
+*/
 public class _03_NullBasicsMore {
-
-    public static void main(String[] args) {
-        new _03_NullBasicsMore();
-    }
 
     void nullLiteral() {
         // The null type has one value, the null reference represented by the null literal
@@ -36,6 +37,8 @@ public class _03_NullBasicsMore {
     void isNullAnObject() {
         // print(null.toString());
         // null is NOT an object!
+        Integer i = null;
+        String d = null;
     }
 
     /*
@@ -75,6 +78,10 @@ public class _03_NullBasicsMore {
         // print(null instanceof null);
     }
 
+    public static void main(String[] args) {
+        new _03_NullBasicsMore().equality();
+    }
+
     /*
      - null == null in Java
      - == checks if the references point to the same memory location
@@ -82,10 +89,10 @@ public class _03_NullBasicsMore {
      - whereas .equals checks if objects are meaningfully equivalent
     */
     void equality() {
-        // Employee e = new Employee();
-        // Employee e2 = new Employee();
-        // print(e == e2);
-        // print(e.equals(e2);
+        Employee e = new Employee();
+        Employee e2 = new Employee();
+        print(e == e2);
+        print(e.equals(e2));
 
         // print(null == null); // true
     }
