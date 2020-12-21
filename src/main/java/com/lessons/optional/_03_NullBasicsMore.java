@@ -11,6 +11,10 @@ import static com.lessons.optional._99_Utils.print;
 
 public class _03_NullBasicsMore {
 
+    public static void main(String[] args) {
+        new _03_NullBasicsMore();
+    }
+
     void nullLiteral() {
         // The null type has one value, the null reference represented by the null literal
         String s = null;
