@@ -6,16 +6,16 @@ public class _05_NullBasicsStorage {
 
     /*
      - How is null stored?
-     - Usually denoted with a zero address in memory but could be anything and
-       implementation specific
-     - Not really our concern
-     - Maybe we can think of it as a singleton or a static in that we do not have to worry
-       about storage of lots of nulls
-     - null is of a special null type without having a name
-     - No type can be declared of this special null type
-     - The null reference type can always be cast to any type
-     - We can mostly ignore the fact that there is a special null type as we cant refer to
-       it in any way
+         - Usually denoted with a zero address in memory but could be anything and
+           implementation specific
+         - Not really our concern
+         - Maybe we can think of it as a singleton or a static in that we do not have to worry
+           about storage of lots of nulls
+         - null is of a special null type without having a name
+         - No type can be declared of this special null type
+         - The null reference type can always be cast to any type
+         - We can mostly ignore the fact that there is a special null type as we cant refer to
+           it in any way
     */
     void storage() {
         // Objects:

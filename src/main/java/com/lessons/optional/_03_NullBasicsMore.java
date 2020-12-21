@@ -4,10 +4,8 @@ import com.lessons.optional._99_Utils.Employee;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 import static com.lessons.optional._99_Utils.print;
 
@@ -48,7 +46,9 @@ public class _03_NullBasicsMore {
     }
 
     /*
-     - See https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)
+     - "For any non-null reference value x, x.equals(null) should return false." See
+       https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object
+      .html#equals(java.lang.Object)
     */
     void equalsShouldAlwaysReturnFalseWhenPassedANull() {
         print("test".equals(null));
@@ -57,7 +57,8 @@ public class _03_NullBasicsMore {
     /*
      - Checks if an object is of a given type
      - null is not an instanceof anything
-     - null is not an instanceof null (at least you can't check)
+     - null is not an instanceof null
+     - In the sense that you cannot even check
     */
     void instanceOf() {
         // Employee e = new Employee();
