@@ -5,6 +5,12 @@ import static com.lessons.optional._99_Utils.print;
 public class _04_NullBasicsDefaultValues {
 
     /*
+     - Java Memory
+         - Stack
+            - For memory allocation and thread execution
+            - Primitives, references to objects
+         - Heap
+            - Objects
      - For all reference types the default value is null
      - Reference types (on the stack) contain a pointer to mem location of the object on
        the heap
@@ -14,14 +20,14 @@ public class _04_NullBasicsDefaultValues {
      - This is not the same as uninitialized in a local var but you will get a compile
        error if you try to use it
     */
-    String k;
-    void defaultForRefTypes() {
-        print(k); // null
+    String s;
+    void refTypes() {
+        print(s); // null
 
-       // Member uninitialized
+       // // Member uninitialized
        // String o;
        // print(o.getBytes());
-       //
+
        // // Null (not uninitialized)
        // String ooo = null;
        // print(ooo.getBytes());
