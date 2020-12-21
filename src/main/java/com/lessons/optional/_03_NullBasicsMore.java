@@ -1,11 +1,7 @@
 package com.lessons.optional;
 
-import com.lessons.optional._99_Utils.Employee;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static com.lessons.optional._99_Utils.print;
 
@@ -15,6 +11,10 @@ import static com.lessons.optional._99_Utils.print;
      - We use the print() method
 */
 public class _03_NullBasicsMore {
+
+    public static void main(String[] args) {
+        new _03_NullBasicsMore().collectionsInconsistentOnNulls();
+    }
 
     void nullLiteral() {
         // The null type has one value, the null reference represented by the null literal
@@ -78,10 +78,6 @@ public class _03_NullBasicsMore {
         // print(null instanceof null);
     }
 
-    public static void main(String[] args) {
-        new _03_NullBasicsMore().equality();
-    }
-
     /*
      - null == null in Java
      - == checks if the references point to the same memory location
@@ -89,12 +85,16 @@ public class _03_NullBasicsMore {
      - whereas .equals checks if objects are meaningfully equivalent
     */
     void equality() {
-        Employee e = new Employee();
-        Employee e2 = new Employee();
-        print(e == e2);
-        print(e.equals(e2));
+        // Employee e = new Employee();
+        // Employee e2 = new Employee();
+        // print(e == e2);
+        // print(e.equals(e2));
 
-        // print(null == null); // true
+        // Employee x = new Employee();
+        // Employee x1 = x;
+        // print(x == x1);
+
+        print(null == null); // true
     }
 
     /*
@@ -108,7 +108,7 @@ public class _03_NullBasicsMore {
      - it is case sensitive so null is not the same as Null
     */
     void reserved() {
-        // String s = null;
+        String s = null;
         // String null = ""; // Illegal! Compile error!
     }
 
@@ -131,7 +131,7 @@ public class _03_NullBasicsMore {
         print(sx.toUpperCase()); // Actually still null
     }
 
-    static class Statik {
+    static class Statiktastic {
 
         static void str() {
             print("hello");
@@ -145,7 +145,7 @@ public class _03_NullBasicsMore {
      - Statics live on the Stack not the Heap
     */
     void statik() {
-        Statik a = null;
+        Statiktastic a = null;
         a.str();
     }
 
@@ -155,10 +155,10 @@ public class _03_NullBasicsMore {
      - Runtime problems are worse than compile time
     */
     void sync() {
-        String k = null;
-        synchronized (k) { // NPE!
-            print("no way");
-        }
+        // String k = null;
+        // synchronized (k) { // NPE!
+        //     print("no way");
+        // }
 
         // Cannot use uninitialized - compile error!
         // String jj;
@@ -185,33 +185,35 @@ public class _03_NullBasicsMore {
     }
 
     void failure() {
-        // Calling a member method
-        String s = null;
-        s.length(); // NPE
+        // // Calling a member method
+        // String s = null;
+        // s.length(); // NPE
 
         // Calling a member variable
-        Employee e = null;
-        int i = e.id; // NPE
+        // Employee e = null;
+        // int i = e.id; // NPE
 
         // Calling an array reference
-        int[] a = null;
-        int k = a[1]; // NPE
+        // int[] a = null;
+        // int k = a[1]; // NPE
     }
 
     void collectionsInconsistentOnNulls() {
-        // Allowed ??
-        List<?> a = new ArrayList<>();
-        a.add(null);
+        // // Allowed ??
+        // List<?> a = new ArrayList<>();
+        // a.add(null);
+        // a.add(null);
+        // print(a.size());
 
-        // Allowed ??
-        Map<?, ?> m = new HashMap<>();
-        m.put(null, null);
-        print(m.size());
+        // // Allowed ??
+        // Map<?, ?> m = new HashMap<>();
+        // m.put(null, null);
+        // m.put(null, null);
+        // print(m.size());
 
         // New factory methods
-        List.of(null); // NPE
-        Map.of(null, null); // NPE
+        // List.of(null); // NPE
+        // Map.of(null, null); // NPE
     }
-
 
 }
