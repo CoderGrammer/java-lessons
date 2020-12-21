@@ -1,5 +1,7 @@
 package com.lessons.optional;
 
+import static com.lessons.optional._99_Utils.print;
+
 public class _05_NullBasicsStorage {
 
     /*
@@ -20,19 +22,39 @@ public class _05_NullBasicsStorage {
         Object o = new Object();
         /*
          - Stack:
-         - Object o -> 98sdd88
-         - 98sdd88 -> Int(6)
+             - Object o -> 98sdd88
+         - Heap:
+             - 98sdd88 -> Object()
         */
 
         // Primitives:
         int i = 5;
         /*
          - Stack:
-         - i -> 5
-         - Primitives live on the stack - unless they are the members of an object
-         - References and primitives live on the stack and objects and their members live
-           on the heap
+             - i -> 5
+             - Primitives live on the stack - unless they are the members of an object
+             - References and primitives live on the stack and objects and their members live
+               on the heap
+             - The heap is only for objects
         */
+        // What about uninitialized local vars?
+        int k;
+        /*
+         - Stack:
+             - Not our concern whether it is stored or not given that it's a compile
+               error if you try to use it before init
+             - Once it is init then it is stored like any other local primitive
+        */
+        // print(k); // Compile error!
+    }
+
+    // Although it could be implementation specific
+    void nullStorage() {
+        Object o = null;
+        /*
+         - Stack:
+             - Object o -> (0) null
+         */
     }
 
 }
