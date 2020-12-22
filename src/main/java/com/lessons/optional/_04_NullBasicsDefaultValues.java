@@ -21,6 +21,10 @@ public class _04_NullBasicsDefaultValues {
        error if you try to use it
     */
 
+    public static void main(String[] args) {
+        new _04_NullBasicsDefaultValues().instanceVarsObjects();
+    }
+
     /*
      - Instance Object variables
      - null is the default value for all object types
