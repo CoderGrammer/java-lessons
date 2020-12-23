@@ -13,7 +13,7 @@ import static com.lessons.optional._99_Utils.print;
 public class _03_NullBasicsMore {
 
     public static void main(String[] args) {
-        new _03_NullBasicsMore().collectionsInconsistentOnNulls();
+        new _03_NullBasicsMore();
     }
 
     void nullLiteral() {
@@ -189,11 +189,11 @@ public class _03_NullBasicsMore {
         // String s = null;
         // s.length(); // NPE
 
-        // Calling a member variable
+        // // Calling a member variable
         // Employee e = null;
         // int i = e.id; // NPE
 
-        // Calling an array reference
+        // // Calling an array reference
         // int[] a = null;
         // int k = a[1]; // NPE
     }
@@ -205,7 +205,7 @@ public class _03_NullBasicsMore {
         // a.add(null);
         // print(a.size());
 
-        // // Allowed ??
+        // Allowed ??
         // Map<?, ?> m = new HashMap<>();
         // m.put(null, null);
         // m.put(null, null);

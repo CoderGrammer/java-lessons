@@ -4,6 +4,10 @@ import static com.lessons.optional._99_Utils.print;
 
 public class _04_NullBasicsDefaultValues {
 
+    public static void main(String[] args) {
+        new _04_NullBasicsDefaultValues();
+    }
+
     /*
      - Java Memory
          - Stack
@@ -11,19 +15,16 @@ public class _04_NullBasicsDefaultValues {
             - Primitives, references to objects
          - Heap
             - Objects
-     - For all reference types the default value is null
-     - Reference types (on the stack) contain a pointer to the memory location of the
-       object on the heap
+     - For all object reference types the default value is null
+     - Object reference types (on the stack) contain a pointer to the memory location of
+       the object on the heap
+       Employee e = new Employee();
      - Primitives (on the stack) (instead of containing a pointer) contain the actual
        value
      - Primitives get a 'sensible' default but the default for references is null
      - This is not the same as uninitialized in a local var but you will get a compile
        error if you try to use it
     */
-
-    public static void main(String[] args) {
-        new _04_NullBasicsDefaultValues().instanceVarsObjects();
-    }
 
     /*
      - Instance Object variables
@@ -148,7 +149,7 @@ public class _04_NullBasicsDefaultValues {
          - 8. What is the default value of static Object reference variables?
              - null, just like non-static instance variables
          - 9. What is the default value of static primitive variables?
-             - a sensible default, just like with non-static instance variables
+             - a sensible default, just like with non-static instance primitive variables
          - 10. Do method variables get a default value?
              - no, never
          - 11. Does using an uninitialized variable cause a runtime error?

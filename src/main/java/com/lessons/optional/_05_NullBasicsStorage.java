@@ -1,8 +1,10 @@
 package com.lessons.optional;
 
-import static com.lessons.optional._99_Utils.print;
-
 public class _05_NullBasicsStorage {
+
+    public static void main(String[] args) {
+        new _05_NullBasicsStorage();
+    }
 
     /*
      - How is null stored?
@@ -17,6 +19,14 @@ public class _05_NullBasicsStorage {
          - We can mostly ignore the fact that there is a special null type as we cant refer to
            it in any way
     */
+
+    /*
+     - Running this despite the compile error shows error alluding to the type
+    */
+    void proofOfTheSpecialNullType() {
+        // null.toString();
+    }
+
     void storage() {
         // Objects:
         Object o = new Object();
