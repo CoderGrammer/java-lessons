@@ -24,7 +24,7 @@ public class _05_NullBasicsStorage {
      - Running this despite the compile error shows error alluding to the type
     */
     void proofOfTheSpecialNullType() {
-        // null.toString();
+        // null.toString(); // <nullType>
     }
 
     void storage() {
