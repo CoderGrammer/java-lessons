@@ -11,13 +11,13 @@ public class _05_NullBasicsStorage {
          - Usually denoted with a zero address in memory but could be anything and
            implementation specific
          - Not really our concern
-         - Maybe we can think of it as a singleton or a static in that we do not have to worry
-           about storage of lots of nulls
-         - null is of a special null type without having a name
+         - Maybe we can think of it as a singleton or a static (but not really) in that we
+           do not have to worry about storage of lots of nulls
+         - null is of a special null type with no name
          - No type can be declared of this special null type
          - The null reference type can always be cast to any type
-         - We can mostly ignore the fact that there is a special null type as we cant refer to
-           it in any way
+         - We can mostly ignore the fact that there is a special null type as we can't
+           refer to it in any way
     */
 
     /*
@@ -47,6 +47,7 @@ public class _05_NullBasicsStorage {
                on the heap
              - The heap is only for objects
         */
+
         // What about uninitialized local vars?
         int k;
         /*
@@ -58,7 +59,7 @@ public class _05_NullBasicsStorage {
         // print(k); // Compile error!
     }
 
-    // Although it could be implementation specific
+    // null storage, although it is implementation specific
     void nullStorage() {
         Object o = null;
         /*
@@ -66,5 +67,37 @@ public class _05_NullBasicsStorage {
              - Object o -> (0) null
          */
     }
+
+    /*
+     - Questions:
+         - 1. Is null an object?
+         - 2. How is null stored?
+         - 3. Does null live on the heap?
+         - 4. Are lots of nulls a performance concern?
+         - Scroll down for answers
+    */
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Answers:
+         - 1. Is null an object?
+            - Nope, not an object!
+         - 2. How is null stored?
+            - It is just a value of a reference on the stack. Probably zero but who
+              cares?
+         - 3. Does null live on the heap?
+            - Nope
+         - 4. Are lots of nulls a performance concern?
+            - Probably not as there is nothing on the heap although lots of references
+              can still take up space in the stack so you might question your design
+    */
 
 }
