@@ -18,7 +18,7 @@ import java.util.Objects;
 public class _06_NullDesignConsiderations {
 
      /*
-      - If .getFireHazards() returns null what does that mean?
+      - If building.getFireHazards() returns null what does that mean?
       - Are there no hazards?
       - Have hazards not been checked yet?
       - Have they been checked but not loaded into the object?
@@ -41,6 +41,14 @@ public class _06_NullDesignConsiderations {
          // getBuilding().getFireHazards() - if null what does it mean??
      }
 
+     /*
+      - In this example we try to close off all the possible scenarios
+      - Such that there is no ambiguity
+      - Either hazards are:
+         - Not loaded
+         - Loaded but there are no hazards
+         - Loaded and there are hazards
+     */
      @Getter
      static class Building {
 
@@ -80,5 +88,16 @@ public class _06_NullDesignConsiderations {
          Hazards hazards;
 
      }
+
+     /*
+      - Recap:
+         - Think before returning null
+         - If you do return null it should have a clear and simple meaning
+         - E.g. a value which does not exist for the given entity e.g. employee
+           .getMiddleName()
+         - Try to avoid null having a special meaning such as a null status which means
+           an employee should be fired. It would be better to return a status of
+           FIRE_EMPLOYEE
+     */
 
 }
