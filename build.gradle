@@ -32,6 +32,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     annotationProcessor 'org.checkerframework:checker:3.8.0'
     compile configurations.checker.dependencies
+    compile 'org.pcollections:pcollections:3.1.4'
 }
 // To execute pass in -PrunCheckFramework
 // For the Checker Framework

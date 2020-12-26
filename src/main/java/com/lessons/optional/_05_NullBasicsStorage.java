@@ -1,9 +1,11 @@
 package com.lessons.optional;
 
+import static com.lessons.optional._99_Utils.print;
+
 public class _05_NullBasicsStorage {
 
     public static void main(String[] args) {
-        new _05_NullBasicsStorage();
+        new _05_NullBasicsStorage().proofOfTheSpecialNullType();
     }
 
     /*
@@ -51,7 +53,7 @@ public class _05_NullBasicsStorage {
         // What about uninitialized local vars?
         int k;
         /*
-         - Stack:
+         - You might think its stored on the stack:
              - Not our concern whether it is stored or not given that it's a compile
                error if you try to use it before init
              - Once it is init then it is stored like any other local primitive
@@ -92,9 +94,9 @@ public class _05_NullBasicsStorage {
             - Nope, not an object!
          - 2. How is null stored?
             - It is just a value of a reference on the stack. Probably zero but who
-              cares?
+              cares? Implementation specific
          - 3. Does null live on the heap?
-            - Nope
+            - Nope, because it is not an object
          - 4. Are lots of nulls a performance concern?
             - Probably not as there is nothing on the heap although lots of references
               can still take up space in the stack so you might question your design
