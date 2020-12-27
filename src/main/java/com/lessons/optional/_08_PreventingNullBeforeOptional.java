@@ -13,15 +13,23 @@ import static com.lessons.optional._99_Utils.print;
 public class _08_PreventingNullBeforeOptional {
 
     public static void main(String[] args) {
+        new _08_PreventingNullBeforeOptional();
+    }
+
+    void ternary() {
         String s = null;
         // Ternary
         print(s == null ? "Nothing" : s);
+    }
 
-        // Use external method that handles null
+    void method() {
+        // Use a method that handles null
         Integer i = null;
         print(i.toString()); // NPE!
         print(String.valueOf(i)); // No NPE
+    }
 
+    void tryCatch() {
         /*
          - Use a try catch to catch the runtime exception
          - Not considered a great idea to use exceptions for flow control
@@ -39,7 +47,9 @@ public class _08_PreventingNullBeforeOptional {
         } catch (NullPointerException n) {
             print("NO VALUE");
         }
+    }
 
+    void supplier() {
         /*
          - Use a method to evaluate a supplier
          - Good for method chains
@@ -47,7 +57,9 @@ public class _08_PreventingNullBeforeOptional {
         SearchResultSet sr = null;
         print(nullableChain(
                 () -> sr.getBestMatch().getEngine().getSize().toUpperCase()));
+    }
 
+    void assertions() {
         /*
          - Use Java assertions
          - They can be quite concise compared to if/throw checks
@@ -55,23 +67,30 @@ public class _08_PreventingNullBeforeOptional {
          - Use the -ea flag to enable
         */
         String s2 = null;
-        assert sr != null;
+        assert s2 != null;
+    }
 
+    void instanceOf() {
         // You can use instanceof to check the type is String and not null
         String s3 = null;
         if (s3 instanceof String) {
             // Not null
         }
+    }
 
-        // Throw an exception
+    void exception() {
+        // Defensively throw an exception manually
         String s4 = null;
         if (s4 == null) throw new IllegalArgumentException("Nope");
+    }
 
+    void objects() {
+        String s = null;
         // Use the JDK methods to check
-        Objects.requireNonNull(s3);
+        Objects.requireNonNull(s);
 
         // Use the JDK methods to check or default
-        Objects.requireNonNullElse(s4, "alternate");
+        Objects.requireNonNullElse(s, "alternate");
 
         /*
          - Check if its null in a streaming context
@@ -82,13 +101,6 @@ public class _08_PreventingNullBeforeOptional {
 
         // Opposite of the previous method
         Objects.nonNull(null);
-
-        // Defensively throw an exception manually
-        String arg = null;
-        if (arg == null) {
-            throw new IllegalArgumentException("Argument arg to the method must not be " +
-                                                       "null");
-        }
     }
 
     static class UnnecessaryNullCheck {
