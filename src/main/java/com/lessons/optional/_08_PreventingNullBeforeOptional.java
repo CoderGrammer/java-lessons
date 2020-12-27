@@ -31,6 +31,10 @@ public class _08_PreventingNullBeforeOptional {
         */
         String t = null;
         try {
+            // // NPE could come from somewhere else
+            // Integer in = null;
+            // int in2 = in.intValue();
+
             print(t.toUpperCase());
         } catch (NullPointerException n) {
             print("NO VALUE");
