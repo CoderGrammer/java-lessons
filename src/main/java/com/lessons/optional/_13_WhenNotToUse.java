@@ -11,6 +11,7 @@ package com.lessons.optional;
       hotspot quickly
     - To replace an 'if' statement
 */
+
 import com.lessons.optional._99_Utils.SearchResultSet;
 
 import java.util.List;
