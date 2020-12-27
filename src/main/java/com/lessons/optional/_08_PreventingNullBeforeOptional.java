@@ -39,13 +39,13 @@ public class _08_PreventingNullBeforeOptional {
         */
         String t = null;
         try {
-            // // NPE could come from somewhere else
+            // NPE could come from somewhere else
             // Integer in = null;
             // int in2 = in.intValue();
 
             print(t.toUpperCase());
         } catch (NullPointerException n) {
-            print("NO VALUE");
+            print("DEFAULT VALUE");
         }
     }
 
@@ -57,6 +57,14 @@ public class _08_PreventingNullBeforeOptional {
         SearchResultSet sr = null;
         print(nullableChain(
                 () -> sr.getBestMatch().getEngine().getSize().toUpperCase()));
+    }
+
+    static <T> String nullableChain(Supplier<T> sup) {
+        try {
+            return sup.get().toString();
+        } catch (NullPointerException n) {
+            return "";
+        }
     }
 
     void assertions() {
@@ -131,14 +139,6 @@ public class _08_PreventingNullBeforeOptional {
     public String getSomeValue() {
         // return null;
         return "abc";
-    }
-
-    static <T> String nullableChain(Supplier<T> sup) {
-        try {
-            return sup.get().toString();
-        } catch (NullPointerException n) {
-            return "";
-        }
     }
 
 }
