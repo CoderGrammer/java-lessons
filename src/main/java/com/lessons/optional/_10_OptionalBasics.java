@@ -17,38 +17,10 @@ public class _10_OptionalBasics {
     }
 
     // Wildcard type gets cast
+    // Internally: 'private static final Optional<?> EMPTY = new Optional<>();'
     // There is only ever 1 empty
     void internallyTypeCast() {
         Optional<String> o = Optional.empty();
-    }
-
-    interface ForceType {}
-    interface Powered extends ForceType {}
-    interface Manual extends ForceType {}
-
-    /*
-     - Polymorphism is where classes are related by inheritance
-     - A top level reference type can point to any of its subtypes
-     - Optional is a parameterized type
-     - With parameterized types you often get Parametric Polymorphism
-         - You can reduce duplication but get type safety
-         - Highly expressive
-     - You cannot extend Optional to have your own parametric polymorphism with Optional
-     - As it is final
-    */
-    void parameterized() {
-
-        class Vehicle<T extends ForceType> {
-        }
-
-        class Car extends Vehicle<Powered> {
-        }
-
-        class Bike extends Vehicle<Manual> {
-        }
-
-        // Compile error! Optional is final
-        // class MaybeAddress extends Optional<MaybeAddress> { }
     }
 
     // Example method that returns Optional should never return null
@@ -121,4 +93,71 @@ public class _10_OptionalBasics {
                 .orElse(100); // do something if no value present
     }
 
+    interface ForceType {}
+    interface Powered extends ForceType {}
+    interface Manual extends ForceType {}
+
+    /*
+     - Polymorphism is where classes are related by inheritance
+     - A top level reference type can point to any of its subtypes
+     - Optional is a parameterized type
+     - With parameterized types you often get Parametric Polymorphism
+         - You can reduce duplication but get type safety
+         - Highly expressive
+     - You cannot extend Optional to have your own parametric polymorphism with Optional
+     - As it is final
+    */
+    void parameterized() {
+
+        class Vehicle<T extends ForceType> {
+        }
+
+        class Car extends Vehicle<Powered> {
+        }
+
+        class Bike extends Vehicle<Manual> {
+        }
+
+        // Compile error! Optional is final
+        // class MaybeAddress extends Optional<MaybeAddress> { }
+    }
+
+    /*
+     - Questions:
+         - 1. Can you create an Optional using its constructor?
+         - 2. Can you store null in an Optional?
+         - 3. Can you implement your own parametric polymorphism with Optional?
+         - 4. If you have no suitable value then return null instead of Optional.empty
+              () to reduce memory overhead? True/False
+         - 5. Optional.of(null) is the best way to construct an empty Optional? True/False
+         - Scroll down for answers
+    */
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Answers:
+         - 1. Can you create an Optional using its constructor?
+            - Nope, there are no public constructors. Use factory methods.
+         - 2. Can you store null in an Optional?
+            - Nope, an Optional.ofNullable(null) becomes Optional.empty() but does not
+              store null
+         - 3. Can you implement your own parametric polymorphism with Optional?
+            - Nope, because Optional is final so you cannot extend it
+         - 4. If you have no suitable value then return null instead of Optional.empty
+              () to reduce memory overhead? True/False
+            - False! No! Never. Any method returning Optional should never return null!
+         - 5. Optional.of(null) is the best way to construct an empty Optional? True/False
+            - No this throws an exception! Use Optional.empty() or
+              Optional.ofNullable(null)
+    */
+
 }
+
