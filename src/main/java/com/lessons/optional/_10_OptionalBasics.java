@@ -27,8 +27,13 @@ public class _10_OptionalBasics {
     interface Manual extends ForceType {}
 
     /*
-     - It is a parameterized type
-     - There is no parametric polymorphism
+     - Polymorphism is where classes are related by inheritance
+     - A top level reference type can point to any of its subtypes
+     - Optional is a parameterized type
+     - With parameterized types you often get Parametric Polymorphism
+         - You can reduce duplication but get type safety
+         - Highly expressive
+     - You cannot extend Optional to have your own parametric polymorphism with Optional
      - As it is final
     */
     void parameterized() {
@@ -39,18 +44,17 @@ public class _10_OptionalBasics {
         class Car extends Vehicle<Powered> {
         }
 
-        class Bike extends Vehicle<Powered> {
+        class Bike extends Vehicle<Manual> {
         }
 
-        /*
-         - Compile error! Optional is final
-         - class MaybeAddress extends Optional<MaybeAddress> { }
-        */
+        // Compile error! Optional is final
+        // class MaybeAddress extends Optional<MaybeAddress> { }
     }
 
     // Example method that returns Optional should never return null
     Optional<String> getString() {
         return null; // Never do this!
+        // Violates any reasonable expectation showing you have considered null!
     }
 
     /*
@@ -114,7 +118,7 @@ public class _10_OptionalBasics {
                 .map(String::toLowerCase) // use the value
                 .flatMap(s -> Optional.ofNullable(s.length())) // use the value
                 .filter(h -> h > 4) // use the value
-                .orElse(100); // do somethign if no value present
+                .orElse(100); // do something if no value present
     }
 
 }
