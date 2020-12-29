@@ -2,16 +2,18 @@ package com.lessons.optional;
 
 import java.util.Optional;
 
-public class _10_OptionalBasics {
+public class _11_OptionalBasics {
 
     public static void main(String[] args) {
+        new _11_OptionalBasics().noPublicConstructor();
     }
 
     // No public constructor
     // You must use factory methods
     void noPublicConstructor() {
         // new Optional<String>(); // Compile error
-        Optional.of("I CAN'T BE NULL");
+        Optional<String> s = Optional.of("I CAN'T BE NULL");// Present
+        // Mainly for interaction with legacy systems
         Optional.ofNullable(null); // Turns into Optional.empty()
         Optional.empty();
     }
@@ -38,9 +40,13 @@ public class _10_OptionalBasics {
 
     /*
      - Optional is final and immutable
+     - Therefore it is also thread safe
      - It is value-based therefore identity sensitive ops incl reference equality (==),
        identity hash code, or synchronization should be avoided
-     - Therefore it is also thread safe
+     - Why? Because in a future release value based classes may have some internal
+       optimization that cause such operations to behave in ways you don't expect
+     - "A program may produce unpredictable results if it attempts to distinguish two
+       references to equal values of a value-based class"
      - Optional is not serializable so don’t use it as bean properties
     */
     void structure() {
@@ -72,7 +78,7 @@ public class _10_OptionalBasics {
        null
     */
     void storage() {
-        Optional.of(null); // Throws NoSuchElementException (not NPE)
+        Optional.of(null); // Throws NullPointerException
         Optional.ofNullable(null); // Equivalent to Optional.empty(), the Null is not
         // stored
     }
@@ -86,7 +92,8 @@ public class _10_OptionalBasics {
          - are checks such as isEmpty
     */
     void downStreamMethods() {
-        Optional.of("")
+        Optional.<String>empty()
+        // Optional.of("ABC")
                 .map(String::toLowerCase) // use the value
                 .flatMap(s -> Optional.ofNullable(s.length())) // use the value
                 .filter(h -> h > 4) // use the value

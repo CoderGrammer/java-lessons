@@ -10,15 +10,15 @@ import static com.lessons.optional._99_Utils.print;
  - If a value is present, it is called present
  - If not, it is called empty (or absent)
 */
-public class _11_What {
+public class _10_What {
 
     public static void main(String[] args) {
 
         Optional<String> s = Optional.empty();
 
         print(meth()
-                                   .map(String::length)
-                                   .orElse(0));
+               .map(String::length)
+               .orElse(0));
     }
 
     static Optional<String> meth() {
