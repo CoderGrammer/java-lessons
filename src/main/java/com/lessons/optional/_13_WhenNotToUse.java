@@ -3,23 +3,30 @@ package com.lessons.optional;
 /*
  - When not to use Optional?
     - Returning container types including collections etc
-    - as field types in a class because it is not serializable
-    - as params to a method (unless you know the callers have an optional)
+    - As field types in a bean class because it is not serializable
     - To represent internal class state
-    - in constructors
-    - As return types their lifecycle is short and they can be garbage collected by
-      hotspot quickly
+    - As params to a method (unless you know the callers have an optional)
+    - As constructor arguments
+    - Although as return types their lifecycle is short and they can be garbage
+      collected by hotspot quickly
     - To replace an 'if' statement
 */
 
 import com.lessons.optional._99_Utils.SearchResultSet;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 public class _13_WhenNotToUse {
 
     public static void main(String[] args) {
+    }
+
+    /*
+     - Returning container types
+    */
+    void returningContainerTypes() {
         // No need for an Optional here
         SearchResultSet search = search();
         // We can provide a convenient mapping method
@@ -30,15 +37,24 @@ public class _13_WhenNotToUse {
         return new SearchResultSet();
     }
 
-    // Empty list is fine
+    /*
+     - Retuning lists
+    */
     static List<_99_Utils.Car> fetch() {
         return List.of();
     }
 
+    /*
+     - Fields
+    */
     class Animal {
 
         class Tail { }
         class Beak { }
+
+        /*
+         - Representing internal state
+        */
 
         /*
          - One approach
@@ -65,9 +81,86 @@ public class _13_WhenNotToUse {
             return tail;
         }
 
+        /*
+         - Getter
+        */
         public Optional<Beak> getBeak() {
             return Optional.ofNullable(beak);
         }
     }
+
+    /*
+     - Method arguments
+    */
+    void methodArguments(Optional<String> s, Optional<Integer> i) {
+        // Forces your callers to wrap into an Optional
+        // Forces you to unwrap or work with an Optional
+    }
+
+    /*
+     - Constructor arguments
+     - Same issue as method arguments
+    */
+    class A {
+        public A(Optional<String> s, Optional<Integer> i) { }
+    }
+
+    /*
+     - Replacing 'if' statements
+     - What's wrong with null?
+    */
+    String replacingIf(String s) {
+        return Optional
+                .ofNullable(s)
+                .map(String::toUpperCase)
+                .orElse( "NOTHING");
+    }
+
+    /*
+     - Maybe easier to read
+     - One less object (albeit short lived)
+     - More in line with the Java creators intentions for Optional
+    */
+    String notReplacingIf(String s) {
+        if (s == null) {
+            return "NOTHING";
+        }
+        return s.toUpperCase();
+    }
+
+    /*
+     - Questions:
+         - 1. Optional is recommended for optional method params? True/False
+         - 2. Optional is recommended for use as a possibly null method return type?
+           True/False
+         - 3. Optional is recommended for use as an instance field? True/False
+         - 4. Optional should be used to represent no search results? True/False
+         - Scroll down for answers
+    */
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Answers:
+         - 1. Optional is recommended for optional method params? True/False
+             - False
+         - 2. Optional is recommended for use as a possibly null method return type?
+           True/False
+             - True. That's exactly what its for
+         - 3. Optional is recommended for use as an instance field? True/False
+             - False. Its not so useful for instance state or bean properties as it is
+               not serializable
+         - 4. Optional should be used to represent no search results? True/False
+             - False. Search results would normally be returned as a container object
+               or a collection of some type. Both scenarios can perfectly well model the
+               absence of results. No need for Optional here.
+    */
 
 }
