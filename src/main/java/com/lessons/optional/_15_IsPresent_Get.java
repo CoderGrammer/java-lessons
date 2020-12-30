@@ -1,13 +1,18 @@
 package com.lessons.optional;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 import static com.lessons.optional._99_Utils.print;
 
 /*
  - get
-     - Calling get() on an empty Optional results in NoSuchElementException
+     - Returns the value if its present
+     - Calling it on an empty Optional results in NoSuchElementException
+     - "I think calling this method "get()" was our biggest API mistake in Java 8"
+       Brian Goetz
+     - There are even calls to deprecate it
+     - Looks simple and safe, but isn't - it might throw an exception
+     - orElseThrow has a side effect but its clear from the name
      - Get is considered problematic because it throws an exception if empty
      - Should not be called without a check first
      - Is a bit like a shortcut of Optional.orElseThrow
@@ -47,7 +52,6 @@ public class _15_IsPresent_Get {
         }
 
         value.orElseThrow(() -> new RuntimeException("Error"));
-
     }
 
     static Optional<String> getValue() {
@@ -55,7 +59,6 @@ public class _15_IsPresent_Get {
     }
 
 }
-
 
     /*
      - Questions:
