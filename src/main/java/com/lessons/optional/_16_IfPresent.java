@@ -11,6 +11,11 @@ public class _16_IfPresent {
 
     public static void main(String[] args) {
         Optional<String> o = Optional.of("abc");
+
+        if (o.isPresent()) {
+            print(o.get());
+        }
+
         o.ifPresent(op -> print(op));
         o.ifPresent(System.out::println);
     }

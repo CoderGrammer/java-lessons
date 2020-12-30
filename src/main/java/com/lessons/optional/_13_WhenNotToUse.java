@@ -7,7 +7,7 @@ package com.lessons.optional;
     - To represent internal class state
     - As params to a method (unless you know the callers have an optional)
     - As constructor arguments
-    - Although as return types their lifecycle is short and they can be garbage
+    - Getters, although as return types their lifecycle is short and they can be garbage
       collected by hotspot quickly
     - To replace an 'if' statement
 */
@@ -15,7 +15,6 @@ package com.lessons.optional;
 import com.lessons.optional._99_Utils.SearchResultSet;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 
 public class _13_WhenNotToUse {
@@ -60,7 +59,7 @@ public class _13_WhenNotToUse {
          - One approach
          - But Optional is not Serializable
          - This violates the bean laws. Sometimes you have a requirement that your beans
-           are 'proper' beans such as in
+           are 'proper' beans such as in framework code
          - some web contexts so they can be deflated and inflated
         */
         Optional<Tail> tail;
@@ -95,6 +94,7 @@ public class _13_WhenNotToUse {
     void methodArguments(Optional<String> s, Optional<Integer> i) {
         // Forces your callers to wrap into an Optional
         // Forces you to unwrap or work with an Optional
+        // You can use method overloading or var args
     }
 
     /*

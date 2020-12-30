@@ -33,6 +33,10 @@ public class _99_Utils {
             return Optional.of(1);
         }
 
+        Optional<String> getMiddleName() {
+            return Optional.of("Smith");
+        }
+
     }
 
     @With
@@ -50,7 +54,7 @@ public class _99_Utils {
 
     @Data
     public static class SearchResultSet {
-        List<Car> employees;
+        List<Car> cars;
         Car bestMatch;
 
         Optional<Car> mapBestMatch(UnaryOperator<Car> func) {

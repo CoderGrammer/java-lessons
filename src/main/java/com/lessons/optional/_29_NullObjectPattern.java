@@ -63,7 +63,7 @@ public class _29_NullObjectPattern {
 //            case "1":
 //                return new Car();
 //            default:
-////                return NULL;
+// //                return NULL;
 //                return null;
 //        }
 //    }
@@ -80,9 +80,9 @@ public class _29_NullObjectPattern {
     }
 
     public void demo() {
-//        getVehicleForUser("0").move();
-//        getVehicleForUser("1").move();
-//        getVehicleForUser("2").move();
+       // getVehicleForUser("0").move();
+       // getVehicleForUser("1").move();
+       // getVehicleForUser("2").move();
 
         getVehicleForUser("0").ifPresent(Vehicle::move);
         getVehicleForUser("1").ifPresent(Vehicle::move);
