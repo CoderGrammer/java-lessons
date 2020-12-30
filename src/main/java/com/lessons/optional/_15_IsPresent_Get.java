@@ -14,7 +14,7 @@ import static com.lessons.optional._99_Utils.print;
      - Looks simple and safe, but isn't - it might throw an exception
      - orElseThrow has a side effect but its clear from the name
      - Get is considered problematic because it throws an exception if empty
-     - Should not be called without a check first
+     - Should not be called without a check first by calling isPresent
      - Is a bit like a shortcut of Optional.orElseThrow
      - There are alternatives to isPresent/get depending on what you want to do such as
        orElse, ifPresent etc
@@ -42,7 +42,7 @@ public class _15_IsPresent_Get {
             s = "";
         }
 
-        value.orElse("");
+        s = value.orElse("");
 
         // When you want to print or throw exception if there is no value
         if (value.isPresent()) {
