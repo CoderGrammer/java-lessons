@@ -8,7 +8,14 @@ public class _19_AllTheOrs {
     }
 
     // or
+    // Return the Optional or an alternative Optional if the former is empty
+    // Introduced in Java 9
     void or() {
+        // Before or
+        Optional<Integer> oo = Optional.of(1);
+        Optional<Integer> oor = oo.map(Optional::of).orElse(Optional.of(2));
+
+        // After or
         Optional<Integer> o = Optional.of(1);
         Optional<Integer> or = o.or(() -> Optional.of(2));
         // Use this when you want to return an Optional and you have something that yields
@@ -16,6 +23,7 @@ public class _19_AllTheOrs {
     }
 
     // orElse
+    // Return the value or an alternative value if the Optional is empty
     void orElse() {
         Optional<Integer> o = Optional.of(1);
         Integer i = o.orElse(2);
@@ -27,14 +35,14 @@ public class _19_AllTheOrs {
     }
 
     // orElseGet
+    // Return the value or an alternative value but from a lambda
+    // Useful if the alternative is expensive to compute
     void orElseGet() {
         Optional<Integer> o = Optional.of(1);
         Integer integer = o.orElseGet(() -> 2);
         /*
          - Use this instead of orElse when:
-         - you want to return a value that is not wrapped in an Optional but have an
-           alternate value too
-         - ...but it is expensive to compute
+             - you want to return a value or an expensive alternative value
         */
     }
 
@@ -49,6 +57,7 @@ public class _19_AllTheOrs {
     }
 
     // orElseThrow
+    // Use when you have a custom/expensive exception to throw
     void orElseThrow2() {
         Optional<Integer> o = Optional.of(1);
         Integer integer = o.orElseThrow(() -> new IllegalStateException("Whoops!"));
@@ -66,9 +75,13 @@ public class _19_AllTheOrs {
         var third = Optional.empty();
 
         /*
-         - Map is no good in this case because it is about transforming a value that is
-           present
-         - first.map()
+         - map()
+            - No good in this case because it is about transforming a value that is
+            present
+         - orElse()
+            - No good because it is about alternate values not Optionals
+         - orElseGet()
+            - No good because like orElse() it is about alternate values not Optionals
         */
 
         // Or is the method to use
@@ -77,5 +90,38 @@ public class _19_AllTheOrs {
                     .orElse("something");
         // or returns an optional whereas orElse orElseGet return values
     }
+
+    /*
+     - Questions:
+         - 1. Can you name all the or methods that must return an Optional?
+         - 2. Which methods take a lambda?
+         - 3. You want to get teh value  from an Optional if present or fetch an
+           alternative value from a slow database if the Optional is empty. Do you use
+          .orElse() or orElseGet()?
+         - Scroll down for answers
+    */
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Answers:
+         - 1. Can you name all the or methods that must return an Optional?
+            - or() is the only one. All the other returns a value
+         - 2. Which methods take a lambda?
+            - or, orElseThrow(supplier), orElseGet
+         - 3. You want to get teh value  from an Optional if present or fetch an
+           alternative value from a slow database if the Optional is empty. Do you use
+          .orElse() or orElseGet()?
+            - orElseGet because it can take a lambda which is lazily evaluated only if
+              required. If you use orElse you would need to compute the alternative
+              value if even if you don.t want to use it.
+    */
 
 }

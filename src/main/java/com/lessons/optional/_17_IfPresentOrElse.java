@@ -5,7 +5,7 @@ import java.util.Optional;
 import static com.lessons.optional._99_Utils.print;
 
 /*
- - Example little more functional... but catering to both scenarios, Empty and Present
+ - Also more functional... but catering to both scenarios, Empty and Present
 */
 public class _17_IfPresentOrElse {
 
@@ -44,11 +44,12 @@ public class _17_IfPresentOrElse {
 
     /*
      - Answers:
-         - 1. What type of function does ifPresent take?
-             - A consumer
-         - 2. If present should be avoided and alternatives should be used. True/False
-             - False. Its perfectly reasonable if you want some side effect if a value
-               is present
+         - 1. You should never ever call ifPresentOrElse without calling isPresent
+           first. True/False
+            - False. Its not needed since it is a 'safe' method
+         - 2. ifPresentOrElse takes two consumers, one for present and one for absent.
+           True/False
+            - False. It takes a consumer (for present) and a runnable (for empty)
     */
 
 }

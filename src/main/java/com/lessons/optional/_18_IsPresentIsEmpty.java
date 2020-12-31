@@ -2,6 +2,7 @@ package com.lessons.optional;
 
 import com.lessons.optional._99_Utils.Employee;
 
+import java.util.List;
 import java.util.Optional;
 import static com.lessons.optional._99_Utils.print;
 
@@ -24,7 +25,7 @@ public class _18_IsPresentIsEmpty {
 
         /*
          - What are the these methods useful for?
-         - You can just use alternatives
+         - You can just use alternatives when you need to operate on the value
          - If you need to do something later where you don't need the value they can be
            useful
         */
@@ -54,7 +55,7 @@ public class _18_IsPresentIsEmpty {
     boolean hasNoMiddleName(Employee e) {
         // return e.getMiddleName().orElse(null) == null;
         // return !e.getMiddleName().isPresent();
-        // return e.getMiddleName().map(g -> Boolean.FALSE).orElse(Boolean.TRUE);
+        // return e.getMiddleName().map(g -> Boolean.TRUE).orElse(Boolean.FALSE);
         return e.getMiddleName().isEmpty();
     }
 
