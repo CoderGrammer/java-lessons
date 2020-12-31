@@ -10,6 +10,8 @@ package com.lessons.optional;
     - Getters, although as return types their lifecycle is short and they can be garbage
       collected by hotspot quickly
     - To replace an 'if' statement
+    - In generic types
+    - As collection element types
 */
 
 import com.lessons.optional._99_Utils.SearchResultSet;
@@ -126,6 +128,33 @@ public class _13_WhenNotToUse {
             return "NOTHING";
         }
         return s.toUpperCase();
+    }
+
+    /*
+     - Avoid using Optionals in Generics it will just clutter things that are already
+       complex
+    */
+    interface Pet<T> { }
+
+    class Dog1 implements Pet<Optional<GeneralPetFood>> { }
+    class Cat1 implements Pet<Optional<GeneralPetFood>> { }
+    class Fish1 implements Pet<Optional<FishFood>> { }
+
+    class Dog implements Pet<GeneralPetFood> { }
+    class Cat implements Pet<GeneralPetFood> { }
+    class Fish implements Pet<FishFood> { }
+
+    class GeneralPetFood {}
+    class FishFood {}
+
+    /*
+     - Avoid as collection element type
+    */
+    void collections() {
+        // Bad
+        List<Optional<String>> l;
+        // Way better
+        List<String> l1;
     }
 
     /*

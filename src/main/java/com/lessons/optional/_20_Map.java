@@ -1,6 +1,9 @@
 package com.lessons.optional;
 
 import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
+
 import static com.lessons.optional._99_Utils.print;
 
 /*
