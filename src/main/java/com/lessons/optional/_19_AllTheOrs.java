@@ -39,7 +39,7 @@ public class _19_AllTheOrs {
     // Useful if the alternative is expensive to compute
     void orElseGet() {
         Optional<Integer> o = Optional.of(1);
-        Integer integer = o.orElseGet(() -> 2);
+        Integer integer = o.orElseGet(() -> 2 * 100000000 + 5);
         /*
          - Use this instead of orElse when:
              - you want to return a value or an expensive alternative value
@@ -88,14 +88,14 @@ public class _19_AllTheOrs {
         first.or(() -> second)
                 .or(() -> third)
                     .orElse("something");
-        // or returns an optional whereas orElse orElseGet return values
+        // or returns an Optional whereas orElse orElseGet return values
     }
 
     /*
      - Questions:
          - 1. Can you name all the or methods that must return an Optional?
          - 2. Which methods take a lambda?
-         - 3. You want to get teh value  from an Optional if present or fetch an
+         - 3. You want to get the value from an Optional if present or fetch an
            alternative value from a slow database if the Optional is empty. Do you use
           .orElse() or orElseGet()?
          - Scroll down for answers
@@ -116,12 +116,12 @@ public class _19_AllTheOrs {
             - or() is the only one. All the other returns a value
          - 2. Which methods take a lambda?
             - or, orElseThrow(supplier), orElseGet
-         - 3. You want to get teh value  from an Optional if present or fetch an
+         - 3. You want to get the value from an Optional if present or fetch an
            alternative value from a slow database if the Optional is empty. Do you use
           .orElse() or orElseGet()?
             - orElseGet because it can take a lambda which is lazily evaluated only if
               required. If you use orElse you would need to compute the alternative
-              value if even if you don.t want to use it.
+              value if even if you don't want to use it.
     */
 
 }
