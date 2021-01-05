@@ -4,6 +4,7 @@ import com.lessons.optional._99_Utils.Employee;
 import com.lessons.optional._99_Utils.Skill;
 
 import java.util.Optional;
+import java.util.function.Function;
 
 import static com.lessons.optional._99_Utils.print;
 
@@ -23,6 +24,7 @@ public class _21_FlatMap {
 
     void flatMap() {
         // Better
+        // Function<T, Optional<U>> mapper
         Optional<Integer> i = e.flatMap(Employee::getAge);
         print(i);
     }
@@ -41,6 +43,7 @@ public class _21_FlatMap {
          - So if your mapping function returns an Optional use this method
          - Remember flatMap() always returns an Optional
      - map vs flatMap
+         - See diagram
          - Generally
              - flatMap is useful when the mapping operation results in an item double
                nested in the containing type e.g. Stream of Streams or Optional of
@@ -92,14 +95,11 @@ public class _21_FlatMap {
 
     /*
      - Answers:
-         - 1. If we need an Integer can we use map() to convert a String to an Integer?
-             - Well yes and no. We can convert a present Optional of type String to an
-               Integer if it is a valid integer value represented as a String. But not if
-               the Optional is empty. No mapping takes place if the Optional is empty
-               but the type is generic even if empty the reference type changes from
-               Optional<String> to Optional<Integer>.
-         - 2. Does map() return an Optional?
-            - Yes always
+         - 1. Which method, map() or flatMap() returns an Optional?
+             - Both
+         - 2. If you have a function that returns a String which method would you use
+              to perform the mapping? flatMap() or map()
+             - map. flatMap is only for mappings that return an Optional
          - 3. Can you change the type of the Optional returned?
-            - You can indeed
+             - Yes of course just like you can with map
     */
