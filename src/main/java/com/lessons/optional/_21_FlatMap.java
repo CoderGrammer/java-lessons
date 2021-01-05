@@ -1,43 +1,105 @@
 package com.lessons.optional;
 
 import com.lessons.optional._99_Utils.Employee;
+import com.lessons.optional._99_Utils.Skill;
 
 import java.util.Optional;
 
 import static com.lessons.optional._99_Utils.print;
 
-/*
- - flatMap
-     - Similar to map, but its signature mandates an input which is wrapped in an Optional
-     - It flattens the result to prevent the nested wrapping in Optionals
-     - So if your mapping function returns an Optional use this method
-     - Remember flatMap() always returns an Optional
- - map vs flatMap
-     - Generally
-         - flatMap is useful when the map operation results in an item double nested in
-           the containing type e.g. Stream of Streams or Optional of Optional
-     - Specifically to Optional
-         - Both map and flatMap return an Optional after applying some function
-         - However in map you pass in a function which maps to x
-         - If x itself happens to be an Optional then you will end up with a double
-           wrapped Optional
-         - In this scenario you could instead call flatMap
-         - flatMaps signature mandates that the function passed in will return an Optional
-         - this is the Optional that will get flattened
-         - This will map and then flatten the result
-         - So it is only wrapped in one Optional
-*/
 public class _21_FlatMap {
 
+    Optional<Employee> e = Optional.of(new Employee());
+
     public static void main(String[] args) {
-        // Scenario
-        Optional<Employee> e = Optional.of(new Employee());
+        new _21_FlatMap();
+    }
+
+    void map() {
         // Whoops!
         Optional<Optional<Integer>> i = e.map(Employee::getAge);
+        print(i);
+    }
+
+    void flatMap() {
         // Better
-        Optional<Integer> k = e.flatMap(Employee::getAge);
-        print(k);
+        Optional<Integer> i = e.flatMap(Employee::getAge);
+        print(i);
+    }
+
+    void nestedFlatMap() {
+        // Multi level nesting...
+        Optional<Integer> i = e.flatMap(l -> l.getSkill().flatMap(Skill::getYears));
+        print(i);
     }
 
 
+    /*
+     - flatMap
+         - Similar to map, but its signature mandates a function which maps to an Optional
+         - It flattens the result to prevent the nested wrapping in Optionals
+         - So if your mapping function returns an Optional use this method
+         - Remember flatMap() always returns an Optional
+     - map vs flatMap
+         - Generally
+             - flatMap is useful when the mapping operation results in an item double
+               nested in the containing type e.g. Stream of Streams or Optional of
+               Optional
+             - flatMap removes one dimension
+         - Specifically to Optional
+             - Both map and flatMap return an Optional after applying some function
+             - However in map you pass in a function which maps to x
+             - If x itself happens to be an Optional then you will end up with a double
+               wrapped Optional - e.g. Optional<Optional<String>>
+             - In this scenario you could instead call flatMap
+             - flatMaps signature mandates that the function passed in will return an
+               Optional
+             - This is the Optional that will get flattened
+             - This will map and then flatten the result
+             - So it is only wrapped in one Optional
+    */
+
 }
+
+// Scroll down for questions....
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Questions:
+         - 1. Which method, map() or flatMap() returns an Optional?
+         - 2. If you have a function that returns a String which method would you use
+              to perform the mapping? flatMap() or map()
+         - 3. Can you change the type of the Optional returned?
+         - Scroll down for answers
+    */
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Answers:
+         - 1. If we need an Integer can we use map() to convert a String to an Integer?
+             - Well yes and no. We can convert a present Optional of type String to an
+               Integer if it is a valid integer value represented as a String. But not if
+               the Optional is empty. No mapping takes place if the Optional is empty
+               but the type is generic even if empty the reference type changes from
+               Optional<String> to Optional<Integer>.
+         - 2. Does map() return an Optional?
+            - Yes always
+         - 3. Can you change the type of the Optional returned?
+            - You can indeed
+    */

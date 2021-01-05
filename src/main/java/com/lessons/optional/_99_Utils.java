@@ -17,6 +17,15 @@ public class _99_Utils {
         System.out.println(s);
     }
 
+    public static class Skill {
+
+        Integer years;
+
+        public Optional<Integer> getYears() {
+            return Optional.ofNullable(years);
+        }
+    }
+
     @EqualsAndHashCode
     @NoArgsConstructor
     @AllArgsConstructor
@@ -24,6 +33,8 @@ public class _99_Utils {
 
         @Getter
         int id;
+
+        Skill skill;
 
         Integer getYrsOfService() {
             return 1;
@@ -37,6 +48,9 @@ public class _99_Utils {
             return Optional.of("Smith");
         }
 
+        public Optional<Skill> getSkill() {
+            return Optional.ofNullable(skill);
+        }
     }
 
     @With

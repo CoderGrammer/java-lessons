@@ -1,8 +1,6 @@
 package com.lessons.optional;
 
 import java.util.Optional;
-import java.util.OptionalInt;
-import java.util.stream.IntStream;
 
 import static com.lessons.optional._99_Utils.print;
 
@@ -18,12 +16,15 @@ import static com.lessons.optional._99_Utils.print;
 public class _20_Map {
 
     public static void main(String[] args) {
-        new _20_Map();
+        new _20_Map().convertType();
     }
 
     void basicExample() {
-        Optional<String> string = meth()
-                .map(String::toUpperCase);
+        // Optional<String> string = meth()
+        //         .map(String::toUpperCase);
+
+        // print(meth()
+        //               .map(s -> s.toUpperCase()));
 
         print(meth()
                       .map(String::toUpperCase));
@@ -38,13 +39,13 @@ public class _20_Map {
     }
 
     static Optional<String> meth() {
-        return Optional.ofNullable("abc");
-        // return Optional.empty();
+        // return Optional.of("1");
+        return Optional.empty();
     }
 
     /*
      - Questions:
-         - 1. If we need an integer can we use map() to convert a string to a number?
+         - 1. If we need an Integer can we use map() to convert a String to an Integer?
          - 2. Does map() return an Optional?
          - 3. Can you change the type of the Optional returned?
          - Scroll down for answers
