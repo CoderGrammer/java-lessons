@@ -7,7 +7,7 @@ import static com.lessons.optional._99_Utils.print;
  - equals(), hashCode() and toString()
      - Where a value is present these methods operate on the value itself
 */
-public class _24_Equality {
+public class _23_Equality {
 
     public static void main(String[] args) {
         Optional<String> o1 = Optional.of("abc");
