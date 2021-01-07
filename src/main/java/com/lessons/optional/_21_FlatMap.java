@@ -35,7 +35,6 @@ public class _21_FlatMap {
         print(i);
     }
 
-
     /*
      - flatMap
          - Similar to map, but its signature mandates a function which maps to an Optional

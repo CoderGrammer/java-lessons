@@ -19,10 +19,16 @@ public class _99_Utils {
 
     public static class Skill {
 
+        String name;
+
         Integer years;
 
         public Optional<Integer> getYears() {
             return Optional.ofNullable(years);
+        }
+
+        public String getName() {
+            return name;
         }
     }
 
