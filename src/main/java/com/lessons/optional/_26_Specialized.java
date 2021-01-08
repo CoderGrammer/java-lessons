@@ -21,10 +21,11 @@ import java.util.stream.IntStream;
 public class _26_Specialized {
 
     public static void main(String[] args) {
-        OptionalDouble average = IntStream.of(1,
-                                              2).average();
+        OptionalDouble average = IntStream.of(1, 2)
+                .average();
         // Stream could be empty... in which case this will be an empty OptionalDouble
-        OptionalDouble average2 = IntStream.of().average();
+        OptionalDouble average2 = IntStream.of()
+                .average();
     }
 
 }

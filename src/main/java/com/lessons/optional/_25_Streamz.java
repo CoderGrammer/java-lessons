@@ -6,66 +6,119 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import static com.lessons.optional._99_Utils.print;
 import static java.util.stream.Collectors.toList;
 
 /*
- - stream
-     - This method allows you to treat an optional as a stream benefiting from all the
-       stream methods
-     - This method is often useful with another stream say from a collection of Cars
+ - stream()
+     - This method allows you to treat an Optional as a Stream benefiting from all the
+       Stream methods
+     - This method is often useful with another Stream say from a collection of Cars
        for example
-     - Usually used with that other streams flatMap method
-     - Where you have an Optional element that may be empty
-     - It returns a stream with the value or an empty stream
-     - Replaces a scenario where you have an existing stream with:
-         - <stream>.filter(Optional::isPresent).map(Optional::get)
-     - or
-         - <stream>.flatMap(o -> o.isPresent() ? Stream.of(o.get()) : Stream.empty())
-     - Can be replaced with:
-         - <stream>.flatMap(Optional::stream)
-     - This returns a stream of 0 or 1 elements
+     - Usually used:
+         - 1. With another streams flatMap method
+         - 2. To treat an Optional as a Stream
+     - It returns a Stream with the value or an empty Stream
+     - This returns a Stream of 0 (empty) or 1 (present) elements
 */
 public class _25_Streamz {
 
     public static void main(String[] args) {
-        // Scenario
-        List<Employee> emps = List.of(new Employee(),
-                                      new Employee());
-        // Map to an optional element and collect
-        var a = emps
-                .stream()
-                .map(Employee::getAge)
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .collect(toList());
+        new _25_Streamz().withStreamsFlatMap();
+    }
 
-        // Map to an optional element and collect
-        var b = emps
-                .stream()
-                // Ugly!
-                .flatMap(g -> g.getAge().isPresent() ? Stream.of(g.getAge()) :
-                        Stream.of())
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .collect(toList());
+    /*
+     - 1. With another streams flatMap method
+         - Streaming over Optionals of something e.g. Stream<Optional<String>>
+         - To unwrap an elements from Optional elements skipping the empties
+    */
+    void withStreamsFlatMap() {
+        List<Optional<String>> l = List.of(
+                Optional.empty(),
+                Optional.of("a"),
+                Optional.of("ab"),
+                Optional.of("abc"));
 
-        // Map to an optional element and collect
-        var c = emps
-                .stream()
-                .map(Employee::getAge)
-                // Much better
+        // // Attempt 1
+        // l.stream()
+        //         .findFirst()                 // Its now a single Optional
+        //         .filter(Optional::isPresent) // So these methods are the Optional ones
+        //         .map(Optional::get);
+
+        // Attempt 2
+        l.stream()
+                .filter(Optional::isPresent) // So these methods are the Optional ones
+                .map(Optional::get);
+
+        // Attempt 3
+        l.stream()
+                .flatMap(o -> o.isPresent() ? Stream.of(o.get()) : Stream.empty());
+
+        // Attempt 4
+        l.stream()
+                .flatMap(o -> o.stream().flatMap(Stream::of));
+
+        // Attempt 5
+        l.stream()
+                .flatMap(o -> o.stream());
+
+        // Final version
+        l.stream()
                 .flatMap(Optional::stream)
-                .collect(toList());
+                .forEach(_99_Utils::print);
+        // Method reference
+    }
 
-        // You can also use stream() if you fancy using any of the methods available there
+    /*
+     - 2. To treat an Optional as a Stream
+    */
+    void switchAnOptionalToStream() {
         List<Integer> g = Optional.of(new Employee())
                 .stream()
                 .map(Employee::getAge)
                 .flatMap(Optional::stream)
                 .collect(toList());
-
-        print(c);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Questions:
+         - 1. The Optional stream() method returns a Stream of the underlying value.
+              True/False
+         - 2. The Optional stream() method converts an Optional<String> to
+              Optional<Stream>. True/False
+         - 3. The Optional stream() method can be used if you want to treat an Optional
+              as a Stream. True/False
+         - Scroll down for answers
+    */
+
+
+
+
+
+
+
+
+
+
+    /*
+     - Answers:
+         - 1. The Optional stream() method returns a Stream of the underlying value.
+              True
+         - 2. The Optional stream() method converts an Optional<String> to
+              Optional<Stream>. False it converts an Optional<String> to Stream<String>
+              for example.
+         - 3. The Optional stream() method can be used if you want to treat an Optional
+              as a Stream. True. It converts an Optional to a Stream.
+    */
 
 }
