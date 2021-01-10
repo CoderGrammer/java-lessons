@@ -13,18 +13,19 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 */
 public class _28_CheckerFramework {
 
-    void a(@Nullable String i) {
+    void callerA() {
+        service("abc"); // Fine
     }
 
-    void c() {
-        b(null);
+    void callerB(@Nullable String i) {
+        service(i); // Error
     }
 
-    void d(@Nullable String i) {
-        b(i);
+    void callerC() {
+        service(null); // Error
     }
 
-    void b(@NonNull String i) {
+    void service(@NonNull String i) {
     }
 
 }

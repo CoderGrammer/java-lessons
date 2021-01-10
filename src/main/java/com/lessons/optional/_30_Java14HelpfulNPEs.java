@@ -9,7 +9,11 @@ import static com.lessons.optional._99_Utils.print;
 public class _30_Java14HelpfulNPEs {
 
     public static void main(String[] args) {
+        // NPEs for nested object graphs
         new A(new B()).getB().getC().getS();
+
+        // NPEs for arrays
+        // whichPartIsNull();
     }
 
     @Value
@@ -30,10 +34,6 @@ public class _30_Java14HelpfulNPEs {
 
     // NPEs using arrays...
     static Integer[][][] multi = {{{1}}, {null}, {{2, 3}}};
-
-//    public static void main(String[] args) {
-//        whichPartIsNull();
-//    }
 
     static void whichPartIsNull() {
         /*

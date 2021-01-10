@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.function.IntUnaryOperator;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -40,7 +41,7 @@ import static com.lessons.optional._99_Utils.print;
 public class _26_Specialized {
 
     public static void main(String[] args) {
-        new _26_Specialized().theConceptsOfOptionalsAreTheSame();
+        new _26_Specialized().whatsTheDealWithMapEtc();
     }
 
     /*
@@ -73,7 +74,7 @@ public class _26_Specialized {
     */
     void ofNullable() {
 
-        Optional<Integer> o = Optional.ofNullable(1);
+        // Optional<Integer> o = Optional.ofNullable(1);
 
         // OptionalInt o = OptionalInt.ofNullable(null); // Nope ?
 
@@ -304,7 +305,7 @@ public class _26_Specialized {
         /*
          - But there is only one OptionalInt at the end. So again is it worth it?
              - It is consistent IntStream -> IntUnaryOperator -> OptionalInt
-             - There is a slight performance improvement
+             - There is a (slight/significant) performance improvement
              - There is a more of a performance improvement if additional methods are
                used
         */
@@ -318,7 +319,7 @@ public class _26_Specialized {
         OptionalInt o = OptionalInt.of(1);
 
         // Doesn't exist
-        // o.map(h -> h*2);
+        // o.map(h -> h * 2);
 
         // But you can map with stream
         IntUnaryOperator i = h -> h * 100;
@@ -328,8 +329,8 @@ public class _26_Specialized {
         // o.stream().map(g -> g * 5.6);
 
         // I lied! You can if you call the right method
-        o.stream().mapToDouble(g -> g * 5.6);
-        o.stream().mapToObj(String::valueOf);
+        OptionalDouble first = o.stream().mapToDouble(g -> g * 5.6).findFirst();
+        Optional<String> first1 = o.stream().mapToObj(String::valueOf).findFirst();
 
         o.stream().flatMap(t -> IntStream.of(t-1, t+1, t+2));
 
@@ -338,6 +339,7 @@ public class _26_Specialized {
 
         // I lied again! You can if you call the right method
         o.stream().mapToObj(Integer::valueOf).flatMap(t -> Stream.of("1", "2"));
+
         // Or even:
         o.stream().boxed().flatMap(t -> Stream.of("1", "2"));
     }
@@ -352,16 +354,29 @@ public class _26_Specialized {
 
 
 
+
+
+
+
+
     /*
      - Questions:
          - 1. Is it ever valid to write code that returns OptionalDouble?
-         - 2. OptionalInt#getAsInt() method will return the value or 0 because int type
-              fields default to 0 in java. True/False
+         - 2. OptionalInt#getAsInt() method will return the value (if present) or 0
+              because int type fields default to 0 in Java. True/False
          - 3. Calling findAny() on an IntStream will return an OptionalInt or an
               Optional if empty. True/False
          - 4. OptionalLong extends Optional so there is no duplication. True/False
          - Scroll down for answers
     */
+
+
+
+
+
+
+
+
 
 
 
@@ -378,14 +393,14 @@ public class _26_Specialized {
              - Yes but its appropriateness depends on context
          - 2. OptionalInt#getAsInt() method will return the value or 0 because int type
               fields default to 0 in java.
-             - False. Just like optional OptionalInt can be empty in which case this
+             - False. Just like Optional OptionalInt can be empty in which case this
                method will throw an exception and should not be called without a call to
                isPresent first
          - 3. Calling findAny() on an IntStream will return an OptionalInt or an
               Optional if empty.
              - False. It always returns OptionalInt which could be 'present' or 'empty'
          - 4. OptionalLong extends Optional so there is no duplication.
-             - False. Optional specializations do not extent Optional
+             - False. Optional specializations do not extend Optional
 
     */
 
