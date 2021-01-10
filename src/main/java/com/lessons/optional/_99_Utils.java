@@ -17,6 +17,10 @@ public class _99_Utils {
         System.out.println(s);
     }
 
+    public static void print(int s) {
+        System.out.println(s);
+    }
+
     public static class Skill {
 
         String name;
