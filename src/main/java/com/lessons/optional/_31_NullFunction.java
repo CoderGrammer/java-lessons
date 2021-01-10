@@ -30,7 +30,7 @@ public class _31_NullFunction {
     }
 
     /*
-     - They don't necessarily have to do nothing as long as they don't create state
+     - They don't necessarily have to do nothing as long as they don't affect state
      - e.g. could be used to implement a wait
     */
     UnaryOperator<String> w = a -> {
@@ -41,7 +41,5 @@ public class _31_NullFunction {
         }
         return a;
     };
-
-
 
 }

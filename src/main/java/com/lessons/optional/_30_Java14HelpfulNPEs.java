@@ -3,6 +3,7 @@ package com.lessons.optional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Value;
+
 import static com.lessons.optional._99_Utils.print;
 
 // See java-lessons-15/src/main/java/HelpfulNPEs.java
@@ -10,10 +11,10 @@ public class _30_Java14HelpfulNPEs {
 
     public static void main(String[] args) {
         // NPEs for nested object graphs
-        new A(new B()).getB().getC().getS();
+        // new A(new B()).getB().getC().getS();
 
         // NPEs for arrays
-        // whichPartIsNull();
+        whichPartIsNull();
     }
 
     @Value
@@ -37,8 +38,8 @@ public class _30_Java14HelpfulNPEs {
 
     static void whichPartIsNull() {
         /*
-         - We refer to something for which there is an index because we done want
-         - IndexOutOfBoundsException
+         - We refer to something for which there is an index because we don't want
+         - IndexOutOfBoundsException but it is null
         */
         print(multi[1][0][0].toString());
     }
