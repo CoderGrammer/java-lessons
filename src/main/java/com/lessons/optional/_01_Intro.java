@@ -26,4 +26,5 @@ package com.lessons.optional;
          - In considering the best design approach for null in your application
          - In using Optional in a sensible way and making best use of its features
 */
-public class _01_Intro { }
+public class _01_Intro {
+}

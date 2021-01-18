@@ -16,9 +16,11 @@ package com.lessons.optional;
  http://blog.vavr.io/the-agonizing-death-of-an-astronaut/
  https://blog.developer.atlassian.com/optional-broken/
  https://www.sitepoint.com/how-optional-breaks-the-monad-laws-and-why-it-matters/
+ https://gist.github.com/ms-tg/7420496
 
  Kotlin:
  https://typealias.com/guides/java-optionals-and-kotlin-nulls/
+
  Checker Framework:
  https://checkerframework.org/manual
  https://www.baeldung.com/checker-framework

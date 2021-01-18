@@ -8,9 +8,9 @@ import java.util.Optional;
  - It is an interface
  - It has two implementations/concrete types; Some and None
  - It is Serializable
- - Another key diff if that in java a .map that results in null returns Optional.empty(),
+ - Another key diff if that in Java a .map that results in null returns Optional.empty(),
    in vavr it would be Some(null)
- - This can cause NPEs in VAVR
+ - This can cause NPEs in VAVR if not careful!
 */
 public class _34_AlternativesVavr {
 
@@ -19,20 +19,20 @@ public class _34_AlternativesVavr {
     }
 
     /*
-     - The anomaly is that it it allows Some(null) whereas Optional Present with null is
+     - The anomaly is that it allows Some(null) whereas Optional Present with null is
        not possible
      */
     void throwsNPE() {
         Option.of(1)
-                .map(i -> (String) null) // Maps to Some(null) - but in Javas Optional
-                // this would be Empty Optional
-                .map(String::intern); // Promptly throws a NPE!
+                .map(i -> (String) null)   // Maps to Some(null) - but in Javas Optional
+                                           // this would be Empty Optional
+                .map(String::toUpperCase); // Promptly throws a NPE!
 
         // Is this a problem? Well yes but there is a better approach in VAVR:
         Option.of(1)
                 .map(i -> (String) null)
                 .flatMap(s -> Option.of(s).map(String::intern)); // Note Option.of is None
-                // in this case
+                                                                 // in this case
 
         /*
          - Why is this better?
@@ -41,12 +41,19 @@ public class _34_AlternativesVavr {
          - This is what happens with:
         */
         Optional.of("a")
-                .map(s -> (String) null) // Computational context changes here to Empty
+                .map(s -> (String) null) // In Java Computational context changes here to
+                                         // Optional.empty
                 .map(String::toUpperCase);
 
-        // In actual fact flatMap should be used for context changes as in the VAVR Option
-        // case
-    }
 
+
+        /*
+         - So in short it is more monadic
+         - It is serializable
+         - Has lots of convenience methods
+         - Can easily convert back and forth with Java
+        */
+
+    }
 
 }

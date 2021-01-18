@@ -13,7 +13,7 @@ import com.google.common.base.Optional;
  - Missing useful methods like flatMap, stream, filter...
  - Guava recommend you use the Java version
  - May be deprecated at some point
- - The lead of Guava was on the expert group for java
+ - The lead of Guava was on the expert group for Java
 */
 public class _33_AlternativesGuava {
 

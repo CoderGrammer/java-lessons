@@ -7,15 +7,17 @@ package com.lessons.optional
 class AlternativeKotlin
 
     fun main(args : Array<String>) {
-        println("Hello, World!")
+
+//        val neverNull: String = null
 
         val thing: String? = "thingy"
         val nothing: String? = null
 
-        println(thing?.toUpperCase()) // non-null gets mapped
+        println(thing?.toUpperCase())   // non-null gets mapped
         println(nothing?.toUpperCase()) // null stays null - not sure this will always be
                                         // useful!
+
         // You can map it similar to how you do in Java Optional
-        println(nothing?.let { "alternativeValue" })
+        println(thing?.let { "alternativeValue" })
 
     }
