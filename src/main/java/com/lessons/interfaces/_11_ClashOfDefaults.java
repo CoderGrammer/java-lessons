@@ -9,4 +9,12 @@ public class _11_ClashOfDefaults {
     // class Z implements A, B {
     // }
 
+     class X implements A, B {
+
+         @Override
+         public void x() {
+            A.super.x(); // You can still call any super method you need
+         }
+     }
+
 }
