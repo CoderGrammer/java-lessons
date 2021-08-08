@@ -28,6 +28,7 @@ class _10_AnatomyOfATest {
      - Assertions are static
      - So you can use static imports
      - You can find them at class: 'org.junit.jupiter.api.Assertions'
+
      */
     @Test
     void myDumbTest2() {
