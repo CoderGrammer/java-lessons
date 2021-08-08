@@ -32,7 +32,7 @@ public class _03_NullBasicsMore {
      - You cannot declare something with this type directly
      - You cannot cast to it
      - You might as well imagine it does not exist
-     - Best to thing of it as a 'special literal that can be of any type'
+     - Best to think of it as a 'special literal that can be of any type'
     */
     void isNullAnObject() {
         // print(null.toString());
