@@ -1,6 +1,6 @@
 package com.lessons.interfaces;
 
-public interface _10_Basics {
+public interface _11_Basics {
 
     // They can be used as marker interfaces
     interface Animal { }
@@ -38,6 +38,7 @@ public interface _10_Basics {
      - these are instance method
      - i.e. they are inherited
      - they cannot be private
+     - they can be overridden
     */
     interface AirVehicle {
 
@@ -54,11 +55,20 @@ public interface _10_Basics {
      - Private methods
      - Not inherited
      - Why do we need them?
-     - To reduce duplication in default methods
+     - To reduce duplication in:
+        - default methods
+        - static methods
      - Move the duplicate code to private methods
      - But not leaking them to implementors
+     - Introduced to allow library developers to add methods to interfaces and still ensure compatibility
+        - i.e. existing implementors don't need to implement new methods all of a sudden
+        - static methods won't do because:
+            - a. they are static implying utility methods
+            - b. they cannot access instance methods
     */
     interface BackAndForthVehicle {
+
+        // Private method to dedup default methods
 
         default void forward() {
             aboutToMoveWarning();
@@ -74,25 +84,32 @@ public interface _10_Basics {
             System.out.println("About to move...");
         }
 
+        // Private method to dedup static methods
+
+        static void printName(String name) {
+            print(name);
+        }
+
+        static void printNum(Integer num) {
+            print(num);
+        }
+
+        private static void print(Object o) {
+            System.out.println(o);
+        }
+
     }
 
     /*
-     - An interesting quirk...
-     - 'protected' visibility is not allowed in interfaces
-     - Deemed to offer little value for added complexity
-    */
-    interface LackingPrivacy {
-        // protected String NAME = "CoderGrammer";
-    }
-
-    /*
-     - Incorporate some utility function
-     - What's the difference between static and default methods
-     - Default can only be called via instances (of implementing classes)
-     - Static can be called at anytime
-     - Static usually implies utility functions
-     - They would ideally be deterministic
-     - can be private/public
+     - Static methods are allowed in interfaces
+         - Incorporate some utility function
+         - Reduces the need for utility classes holding only static methods
+         - What's the difference between static and default methods
+         - Default can only be called via instances (of implementing classes)
+         - Static can be called at anytime
+         - Static usually implies utility functions
+         - They would ideally be deterministic
+         - Can be private/public
     */
     interface RentalCalculator {
 
@@ -113,5 +130,18 @@ public interface _10_Basics {
         // public abstract final void reverse();
         // ... doesn't really make sense since 'final' implies the 'final' implementation
     }
+
+    /*
+     - So we have seen that interfaces can contain:
+        - abstract methods
+        - static methods
+        - constants
+        - default methods
+     - When you implement an interface you must implement all abstract methods
+     - But abstract classes don't need to
+     - Interfaces names can be used in the same way class types can be used
+    */
+
+
 
 }

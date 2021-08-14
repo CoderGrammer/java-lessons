@@ -1,6 +1,6 @@
 package com.lessons.interfaces;
 
-public class _40_FunctionalInterfaces {
+public class _44_FunctionalInterfaces {
 
     // We can declare functional interfaces which allow us to use lambdas
 
@@ -18,7 +18,7 @@ public class _40_FunctionalInterfaces {
     }
 
     public static void main(String[] args) {
-        _40_FunctionalInterfaces f = new _40_FunctionalInterfaces();
+        _44_FunctionalInterfaces f = new _44_FunctionalInterfaces();
 
         // If it were not a functional interface we would have to do this...
         f.manufacture(new MakeSomething() {
@@ -32,7 +32,7 @@ public class _40_FunctionalInterfaces {
         f.manufacture(() -> System.out.println("Make a simple cake"));
     }
 
-    // However the functional interface annotation is optional
+    // However, the functional interface annotation is optional
     // Having it will force the compiler to enforce it remaining a 'Functional Interface'
 
 }

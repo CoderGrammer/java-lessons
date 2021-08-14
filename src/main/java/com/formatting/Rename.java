@@ -20,24 +20,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+/*
+ - What it does:
+     - From the 'start num' it bumps the numbers
+ - Issues:
+     - Will not bump single digit numbers
+*/
 public class Rename {
 
     enum Type {
         INCREMENT, DECREMENT
     }
 
-    static final Type type = Type.INCREMENT;
-    static final int START_NUM_INCLUSIVE = 1;
+    static final Type type = Type.DECREMENT;
+    static final int START_NUM_INCLUSIVE = 17;
 
     static final String FILE_NUMBER_FORMAT = "_%02d_";
     static final List<Integer> EXCLUDE_FROM_RENAME = List.of(99);
     static final String START = String.format(FILE_NUMBER_FORMAT, START_NUM_INCLUSIVE);
     static final String BASE_PATH = "/Users/syedasghar/code/courses/java-lessons/";
     static final String BACKUP_PATH = BASE_PATH + ".bak";
-    static final String SRC_PATH = BASE_PATH + "src/main/java/com/lessons/optional";
+    static final String SRC_PATH = BASE_PATH + "src/main/java/com/lessons/interfaces";
 
     public static void main(String[] args) {
-        Rename r = new Rename();
+        Rename r = new   Rename();
         r.doIt();
     }
 

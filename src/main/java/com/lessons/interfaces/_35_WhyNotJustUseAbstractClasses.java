@@ -1,6 +1,6 @@
 package com.lessons.interfaces;
 
-public class _31_WhyNotJustUseAbstractClasses {
+public class _35_WhyNotJustUseAbstractClasses {
 
     /*
      - What is an abstract class?

@@ -1,6 +1,6 @@
 package com.lessons.interfaces;
 
-public class _15_WhatCanTheyHold {
+public class _19_WhatCanTheyHold {
 
     /*
      - Fields are static

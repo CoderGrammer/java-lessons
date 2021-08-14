@@ -1,6 +1,6 @@
 package com.lessons.interfaces;
 
-public class _13_Implementing {
+public class _17_Implementing {
 
     interface CanJump {
 
