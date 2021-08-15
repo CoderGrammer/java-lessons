@@ -18,9 +18,9 @@ public class _54_Annotations {
      - Annotations are using to decorate certain fields, methods etc
      - We mention them because they are declared with @interface which could cause some
        confusion
-     - Annotations are a form of interface but for simplicity its probably best to just
+     - Annotations are a form of interface but for simplicity it's probably best to just
        think of them as annotations
-     - They are a whole topic on their own and maybe we will cover them separately in
+     - They are a whole topic on their own, and maybe we will cover them separately in
        future
     */
 
