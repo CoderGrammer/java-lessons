@@ -142,6 +142,4 @@ public interface _11_Basics {
      - Interfaces names can be used in the same way class types can be used
     */
 
-
-
 }
