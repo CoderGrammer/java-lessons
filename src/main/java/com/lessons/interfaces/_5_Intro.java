@@ -9,6 +9,11 @@ public class _5_Intro {
     /*
      - A class like structure
      - Denoted with the keyword 'interface'
+     - They are called interfaces because implementors promise to 'abide' by the given
+        - interface or contract
+     - Furthermore when passed around it may be that the implementation is not obvious to clients
+        - e.g. You pass an InfoSource to a client
+        - but you may one day pass DBInfoSource or another day FileInfoSource
     */
     class Dog { }
     interface Animal { }
