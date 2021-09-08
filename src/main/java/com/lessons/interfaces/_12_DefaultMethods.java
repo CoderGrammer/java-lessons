@@ -5,11 +5,11 @@ public class _12_DefaultMethods {
     /*
      - We already saw default methods - Let's recap
         - Why do we need them
-            - if you add methods to an interface you break source compatibility
-            - this means that implementors will no longer compile
-            - this means library designers cannot evolve their interfaces
-            - but they can now with default methods
-            - adding a default method does not break implementors
+            - If you add methods to an interface you break source compatibility
+            - This means that implementors will no longer compile
+            - This means library designers cannot evolve their interfaces
+            - But they can now with default methods
+            - Adding a default method does not break implementors
             - You effectively provide a 'default' implementation so implementors don't have to worry
          - There can be issues around resolution though - we will come to those shortly
          - They allow multiple inheritance - without state!
@@ -21,8 +21,9 @@ public class _12_DefaultMethods {
     interface B { default void x() { } }
 
     // You are forced to override the method because there is a clash
-    // class Z implements A, B {
-    // }
+    class Z implements A, B {
+        public void x() { }
+    }
 
     class X implements A, B {
 
@@ -36,12 +37,13 @@ public class _12_DefaultMethods {
     /*
      - To understand which default method will be called there are resolution rules
          - we won't go through all of them because it won't be common
+            - but important to be aware, so we don't take it for granted
          - but we will look at some examples
     */
 
     // ------------------------------------------
 
-    interface U { default void b() {}; }
+    interface U { default void b() { } }
 
     class Uc implements U {
         void a() {
@@ -51,7 +53,7 @@ public class _12_DefaultMethods {
 
     // ------------------------------------------
 
-    interface V { default void b() {}; }
+    interface V { default void b() { } }
 
     // class Ud implements U, V {
     //     void a() {
@@ -67,7 +69,12 @@ public class _12_DefaultMethods {
     }
 
     // Look at the error message!
-    // class Ue implements W, V {
-    // }
+    class Ue implements W, V {
+
+        @Override
+        public void b() {
+
+        }
+    }
 
 }

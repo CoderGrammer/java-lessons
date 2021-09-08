@@ -16,12 +16,26 @@ public interface _11_Basics {
     // A real life example is Serializable
 
     /*
-     - They can represent some 'trait' or 'characteristic'
+     - They can represent some 'trait' or 'characteristic' or 'nature'
      - Incorporate some prescribed ability but not 'how'
     */
     interface Vehicle {
 
         void drive();
+
+    }
+
+    // or
+
+    interface CanJump {
+
+        void jump();
+
+        /*
+         - Again notice the method represents an ability but not 'how'
+         - These methods are abstract by default
+         - They need to be implemented by implementing classes
+        */
 
     }
 
@@ -125,6 +139,9 @@ public interface _11_Basics {
          - abstract is redundant
     */
     interface Car {
+
+        public static final int ERROR_CODE = 123;
+
         public abstract void drive();
         // Cannot combine final with abstract
         // public abstract final void reverse();
