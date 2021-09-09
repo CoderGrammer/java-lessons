@@ -8,7 +8,7 @@ public interface _13_Visibility {
     /*
      - Nested interfaces are public by default
      - Nested interfaces are static by default
-     - cannot be any other modifier
+     - Cannot have any other modifier
     */
     public static interface A { }
 
@@ -23,7 +23,7 @@ public interface _13_Visibility {
 
     /*
      - By the way, what's the difference between protected and default (no access modifier)?
-        - The difference is all what subclasses in OTHER packages can access
+        - The difference is all about what subclasses in OTHER packages can access
             - default things cannot be accessed by subclasses in different packages
             - protected things can be accessed by subclasses in different packages
     */
