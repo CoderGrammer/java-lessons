@@ -4,24 +4,28 @@ public class _16_WhatsInAName {
 
     /*
      - Interface naming
-        - Interfaces usually represent some characteristic or nature
+        - Interfaces usually represent some characteristic or nature or ability
             - e.g. Cat could be a nature
             - e.g. RequiresAuth is a characteristic
         - You may see names such as:
             - IsA
+                - IsATrade
             - Can
+                - CanGoForward
             - Has/Having
+                - HavingMetadata
             - Requires/Requiring/Must
+                - RequiresAdminPermission
             - ...able
+                - Deletable
         - Sometimes you see prefixes like 'I'
             - e.g. ICat
             - Best to avoid as
-                - its a Hungarian notation
+                - it's a Hungarian notation
                 - is there any value in making that distinction?
                     - it clutters the code
-                    - clients often wont care
-                    - ides will tell you anyway
-
+                    - clients often won't care
+                    - IDEs will tell you anyway
     */
     interface IHavingRequiringCanMustShouldDoesBlahBlah { }
 

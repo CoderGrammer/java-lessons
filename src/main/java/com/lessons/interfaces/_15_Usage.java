@@ -5,7 +5,6 @@ import java.util.List;
 
 public class _15_Usage {
 
-
     /*
      - Implement interface
     */
@@ -27,7 +26,8 @@ public class _15_Usage {
         - unless you implement it... more about that later
     */
     void instance() {
-        // AirVehicle a = new AirVehicle();
+        // AirVehicle a = new AirVehicle(); // Nope
+        AirVehicle b = new Aeroplane(); // Yes
     }
 
     /*
@@ -37,7 +37,7 @@ public class _15_Usage {
             - If you change the underlying implementation the impact on your code is minimal
     */
     void reference() {
-        List l = new ArrayList<>();
+        List<String> l = new ArrayList<>();
         printList(l);
     }
 
@@ -50,7 +50,11 @@ public class _15_Usage {
         System.out.println("Servicing");
     }
 
-    // An implementing instance on the fly
+    /*
+     - An implementing instance on the fly
+     - An anonymous class
+     - Anonymous as in it does not have a name
+    */
     void example() {
         service(new AirVehicle() {
             @Override
