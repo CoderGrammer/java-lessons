@@ -1,6 +1,26 @@
 package com.lessons.interfaces;
 
+/*
+ - Other than methods, what can interfaces hold?
+*/
 public class _19_WhatCanTheyHold {
+
+    /*
+     - All of these are static by default
+    */
+    interface X {
+
+        class A { }
+
+        abstract class B { }
+
+        interface C { }
+
+        // How about static blocks?
+        // static {
+        //
+        // }
+    }
 
     /*
      - Fields are static
