@@ -2,7 +2,6 @@ package com.lessons.interfaces;
 
 public class _34_Design {
 
-
     // When to create an interface?
 
     /*
@@ -10,7 +9,7 @@ public class _34_Design {
      - I tend to create them when:
         - I want to treat a bunch of objects by some characteristic
             - e.g. I have cars and boats, but I want to register them, I could create a
-              Vehicle interface and have a 'register' method
+              Registerable interface and have a 'register' method
             - See example 1
         - Or, I need to share some functionality across multiple classes, I can create
           an interface to hold that functionality

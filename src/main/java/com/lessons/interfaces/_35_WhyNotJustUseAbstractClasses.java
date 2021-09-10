@@ -1,5 +1,8 @@
 package com.lessons.interfaces;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class _35_WhyNotJustUseAbstractClasses {
 
     /*
@@ -64,6 +67,23 @@ public class _35_WhyNotJustUseAbstractClasses {
 
         // Get the state from the implementations
         StringBuilder getMessage();
+    }
+
+
+    // Hang on! Did I lie about state?
+    interface WithState {
+
+        Map<String, Integer> studentExamScores = new HashMap<>();
+
+        // Does this not update state?
+        default void addScore(String name, Integer score) {
+            studentExamScores.put(name, score);
+        }
+
+        /*
+         - ...well... yes it does, but it is not instance state!
+         - This state only exists once per JVM since it is static
+        */
     }
 
 }
