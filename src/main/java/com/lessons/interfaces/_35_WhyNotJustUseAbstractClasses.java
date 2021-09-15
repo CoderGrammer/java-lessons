@@ -8,7 +8,7 @@ public class _35_WhyNotJustUseAbstractClasses {
     /*
      - What is an abstract class?
         - Mix and match abstract and non-abstract methods
-        - Cannot instantiate with 'new'
+        - Cannot instantiate with 'new' unless anonymous
         - Must use the 'abstract' keyword
         - Main issue is that you can only inherit from 1 abstract class
         - As soon as you do that you close off the inheritance chain (apart from
@@ -23,6 +23,20 @@ public class _35_WhyNotJustUseAbstractClasses {
         abstract int getNumberOfRooms();
 
     }
+
+    /*
+     - Anonymous i.e. no name. Very similar to what we saw with interfaces
+    */
+    void callWithAnonymous() {
+        x(new Home() {
+            @Override
+            int getNumberOfRooms() {
+                return 0;
+            }
+        });
+    }
+
+    void x(Home h) { }
 
     /*
      - So what other differences are there?
@@ -68,7 +82,6 @@ public class _35_WhyNotJustUseAbstractClasses {
         // Get the state from the implementations
         StringBuilder getMessage();
     }
-
 
     // Hang on! Did I lie about state?
     interface WithState {
