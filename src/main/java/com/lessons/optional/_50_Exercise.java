@@ -64,7 +64,7 @@ public class _50_Exercise {
     /*
      - 2.
      - Get the random employee age
-     - If present add 10 to it
+     - If present add 10 to it and print it out
      - If empty print zero
     */
     void roundRandomEmployeeAgeDownAndPrintOrZero() {

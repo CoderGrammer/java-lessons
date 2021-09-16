@@ -2,14 +2,12 @@ package com.lessons.interfaces;
 
 public class _34_Design {
 
-    // When to create an interface?
-
     /*
      - When to create an interface?
      - I tend to create them when:
         - I want to treat a bunch of objects by some characteristic
             - e.g. I have cars and boats, but I want to register them, I could create a
-              Registerable interface and have a 'register' method
+              Registrable interface and have a 'register' method
             - See example 1
         - Or, I need to share some functionality across multiple classes, I can create
           an interface to hold that functionality
@@ -30,11 +28,11 @@ public class _34_Design {
 
     // Example 1
 
-    interface Registerable {
+    interface Registrable {
         void register();
     }
 
-    class Car implements Registerable {
+    class Car implements Registrable {
 
         @Override
         public void register() {
@@ -43,7 +41,7 @@ public class _34_Design {
 
     }
 
-    class Boat implements Registerable {
+    class Boat implements Registrable {
 
         @Override
         public void register() {
@@ -102,7 +100,7 @@ public class _34_Design {
 
         @Override
         public void search() {
-            System.out.println("Execute search in a postgre way...");
+            System.out.println("Execute search in a postgres way...");
         }
     }
 
