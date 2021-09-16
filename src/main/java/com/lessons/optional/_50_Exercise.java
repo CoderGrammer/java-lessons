@@ -1,13 +1,12 @@
 package com.lessons.optional;
 
-import java.util.Objects;
 import java.util.Optional;
 
 /*
  - This class holds the code for the exercise tasks
  - See the code below and then see the tasks further below
 */
-public class _50_Excercise {
+public class _50_Exercise {
 
     EmployeeService service = new EmployeeService();
 
@@ -34,7 +33,7 @@ public class _50_Excercise {
      - This method just allows you to run your task methods
     */
     public static void main(String[] args) {
-        var e = new _50_Excercise();
+        var e = new _50_Exercise();
         e.printRandomEmployeeNameOrMissing();
         e.roundRandomEmployeeAgeDownAndPrintOrZero();
         e.printRandomEmployeeSurnameOrMissing();
