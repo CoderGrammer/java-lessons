@@ -19,11 +19,13 @@ public class _34_Design {
             - You can hide implementation details
             - See example 3
         - To allow composability and maintainability some features could be extracted
-          into interfaces, rather than one big class.
+          into interfaces, rather than one big class
            - See example 4
         - Some design considerations:
             - I personally prefer small interfaces
-            - Consider providing default implementation where it makes sense
+            - Consider providing default implementations where they make sense
+                - If a sensible one can be provided
+                - But not if you really need all implementations to provide their own
     */
 
     // Example 1
