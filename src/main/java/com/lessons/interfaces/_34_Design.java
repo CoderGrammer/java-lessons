@@ -40,7 +40,6 @@ public class _34_Design {
         public void register() {
             System.out.println("Register car...");
         }
-
     }
 
     class Boat implements Registrable {

@@ -10,13 +10,14 @@ public class _35_WhyNotJustUseAbstractClasses {
         - Mix and match abstract and non-abstract methods
         - Cannot instantiate with 'new' unless anonymous
         - Must use the 'abstract' keyword
+        - The opposite of interfaces
         - Main issue is that you can only inherit from 1 abstract class
         - As soon as you do that you close off the inheritance chain (apart from
           interfaces)
     */
     abstract class Home {
 
-        void switchOnElectric() {
+        void switchOnElectrics() {
             System.out.println("Switch on lights...");
         }
 
@@ -24,7 +25,16 @@ public class _35_WhyNotJustUseAbstractClasses {
 
     }
 
+    class MyHome extends Home {
+
+        @Override
+        int getNumberOfRooms() {
+            return 3;
+        }
+    }
+
     /*
+     - There is another way to extend them on the fly
      - Anonymous i.e. no name. Very similar to what we saw with interfaces
     */
     void callWithAnonymous() {
@@ -49,6 +59,7 @@ public class _35_WhyNotJustUseAbstractClasses {
 
     }
 
+    // Let's try to create state in an interface
     interface IMessages {
 
         // Automatically static!
@@ -81,6 +92,19 @@ public class _35_WhyNotJustUseAbstractClasses {
 
         // Get the state from the implementations
         StringBuilder getMessage();
+    }
+
+    // e.g.
+
+    static class Impl implements InterfaceMessages {
+
+        StringBuilder message = new StringBuilder("This is the first part of a " +
+                                                          "message:");
+
+        @Override
+        public StringBuilder getMessage() {
+            return message;
+        }
     }
 
     // Hang on! Did I lie about state?
