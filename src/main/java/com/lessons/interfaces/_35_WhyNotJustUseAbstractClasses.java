@@ -9,7 +9,7 @@ public class _35_WhyNotJustUseAbstractClasses {
      - What is an abstract class?
         - Mix and match abstract and non-abstract methods
         - Cannot instantiate with 'new' unless anonymous
-        - Must use the 'abstract' keyword
+        - Abstract methods must use the 'abstract' keyword
         - The opposite of interfaces
         - Main issue is that you can only inherit from 1 abstract class
         - As soon as you do that you close off the inheritance chain (apart from

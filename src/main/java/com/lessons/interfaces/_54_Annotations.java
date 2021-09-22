@@ -15,7 +15,7 @@ public class _54_Annotations {
     String creditCardNumber;
 
     /*
-     - Annotations are using to decorate certain fields, methods etc
+     - Annotations are using to decorate certain fields, methods etc.
      - We mention them because they are declared with @interface which could cause some
        confusion
      - Annotations are a form of interface but for simplicity it's probably best to just

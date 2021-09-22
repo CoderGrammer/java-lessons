@@ -1,5 +1,9 @@
 package com.lessons.interfaces;
 
+/*
+ - What are functional interfaces?
+    - They are interfaces which be a substituted with lambdas/method references
+*/
 public class _44_FunctionalInterfaces {
 
     // We can declare functional interfaces which allow us to use lambdas
