@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
        validation
      - They have different levels of support in different IDEs and setups
      - There is little consistency
-     - Not sure I would not bother with them personally!
+     - Not sure that I would not bother with them personally!
          - Unless they are used consistently they may give false sense of security
      - I prefer to:
          - Return Optional from service methods
