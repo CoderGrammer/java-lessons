@@ -1,14 +1,14 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.20'
+    id "org.jetbrains.kotlin.jvm" version "1.6.21"
     id 'org.checkerframework' version '0.5.13'
     id 'scala'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-targetCompatibility = '11'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -22,18 +22,18 @@ dependencies {
     implementation 'com.google.guava:guava:30.0-jre'
     implementation 'io.vavr:vavr:0.10.3'
     implementation 'com.jnape.palatable:lambda:5.2.0'
-    implementation 'org.jetbrains.kotlin:kotlin-script-runtime:1.4.20'
+    implementation 'org.jetbrains.kotlin:kotlin-script-runtime:1.6.21'
     implementation 'commons-io:commons-io:2.11.0'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
     compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.16'
-    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     annotationProcessor 'org.checkerframework:checker:3.8.0'
-    compile configurations.checker.dependencies
-    compile 'org.pcollections:pcollections:3.1.4'
+    implementation configurations.checker.dependencies
+    implementation 'org.pcollections:pcollections:3.1.4'
 }
 // To execute pass in -PrunCheckFramework
 // For the Checker Framework
@@ -57,12 +57,12 @@ test {
 }
 compileKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "16"
     }
 }
 compileTestKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "16"
     }
 }
 
