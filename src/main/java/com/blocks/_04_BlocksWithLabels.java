@@ -8,6 +8,9 @@ public class _04_BlocksWithLabels {
 
     public static void main(String[] args) {
         System.out.println("Before block");
+        {
+            System.out.println("Inside block");
+        }
         blah : {
             System.out.println("blah");
             if (1 == 1) {
@@ -25,7 +28,7 @@ public class _04_BlocksWithLabels {
     //     System.out.println("something repetitive");
     // }
 
-    // But  you can inside an instance block
+    // But you can inside an instance block
     {
         foo : {
             System.out.println("something repetitive");

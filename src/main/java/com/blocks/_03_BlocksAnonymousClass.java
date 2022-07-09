@@ -11,6 +11,9 @@ public class _03_BlocksAnonymousClass {
         void purr();
     }
 
+    public static void main(String[] args) {
+        new _03_BlocksAnonymousClass().callAMethodThatTakesAnAnonymousClass();
+    }
     /*
      - Initialisation blocks can be useful for anonymous classes
     */

@@ -14,6 +14,10 @@ package com.blocks;
 */
 public class _02_BlocksOrder {
 
+    static {
+        System.out.println("Static block 1");
+    }
+
     {
         System.out.println("something repetitive");
     }
@@ -34,11 +38,6 @@ public class _02_BlocksOrder {
     public static void main(String[] args) {
         new _02_BlocksOrder();
         new _02_BlocksOrder("");
-    }
-
-    interface Cat {
-        void meow();
-        void purr();
     }
 
 }
